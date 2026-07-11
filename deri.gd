@@ -3,7 +3,8 @@ extends CharacterBody2D
 var coyote_frames = 3
 var is_coyote = false
 var jumped = false
-const SPEED = 300.0
+var facing = 1
+const SPEED = 350.0
 const JUMP_VELOCITY = -700.0
 
 func _ready() -> void:
@@ -29,7 +30,17 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
+		if direction < 0:
+			$AnimationPlayer.play("walk-left")
+		else:
+			$AnimationPlayer.play("walk-right")
 	else:
+		if velocity.x != 0:
+			facing = velocity.x
+			if facing < 0:
+				$AnimationPlayer.play("idle-left")
+			else:
+				$AnimationPlayer.play("idle-right")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
