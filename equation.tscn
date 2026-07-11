@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxspdofxrravn"]
+
+[ext_resource type="Texture2D" uid="uid://d4f6np5c6oh5x" path="res://icon.svg" id="1_gbn5y"]
+[ext_resource type="Script" uid="uid://cef4mtpddvl0d" path="res://equation.gd" id="1_xfrnx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbn5y"]
+size = Vector2(98.88786, 80.62698)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xfrnx"]
+font_size = 22
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="equation" type="Node2D"]
+script = ExtResource("1_xfrnx")
+equation = "test"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.3841858e-07, 0.052825928)
+scale = Vector2(-0.6027982, -0.5742003)
+texture = ExtResource("1_gbn5y")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0.020198822, -0.2967856)
+rotation = -3.1415927
+scale = Vector2(0.6544933, 0.71127653)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = -3.1415925
+scale = Vector2(1.205321, 1.2649081)
+shape = SubResource("RectangleShape2D_gbn5y")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -96.0
+offset_top = -114.99999
+offset_right = -56.0
+offset_bottom = -74.99999
+scale = Vector2(4.7739735, 2.036216)
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEdit" type="LineEdit" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37284437
+anchor_top = 0.42114934
+anchor_right = 0.7728445
+anchor_bottom = 0.42114943
+offset_left = -11.981207
+offset_top = 8.2004795
+offset_right = 56.58129
+offset_bottom = 39.200478
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.41144925, 0.39308855)
+max_length = 4
+virtual_keyboard_type = 5
+clear_button_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.662838
+offset_top = -25.893291
+offset_right = 91.33716
+offset_bottom = 5.1067085
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5500171, 0.9889873)
+text = "placeholder"
+label_settings = SubResource("LabelSettings_xfrnx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="text_submitted" from="Control/LineEdit" to="." method="_on_line_edit_text_submitted"]
