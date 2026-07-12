@@ -178,7 +178,7 @@ vframes = 2
 frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 13)
+position = Vector2(1, 9)
 scale = Vector2(0.4140625, 0.4140625)
 shape = SubResource("CapsuleShape2D_j2q8x")
 

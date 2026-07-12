@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dxspdofxrravn"]
+[gd_scene load_steps=13 format=3 uid="uid://dxspdofxrravn"]
 
 [ext_resource type="Script" uid="uid://cef4mtpddvl0d" path="res://equation.gd" id="1_xfrnx"]
 [ext_resource type="Texture2D" uid="uid://bjnu2bqh28yb8" path="res://art/npc.png" id="2_0wq3e"]
@@ -8,8 +8,9 @@
 size = Vector2(372.68292, 153.38455)
 
 [sub_resource type="Theme" id="Theme_0rrsf"]
-default_font = ExtResource("3_0wq3e")
 default_font_size = 16
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
 LineEdit/font_sizes/font_size = 16
 
 [sub_resource type="LabelSettings" id="LabelSettings_xfrnx"]
@@ -17,6 +18,11 @@ font = ExtResource("3_0wq3e")
 font_size = 32
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0wq3e"]
+font = ExtResource("3_0wq3e")
+font_color = Color(0.41568628, 0.41568628, 0.41568628, 1)
+outline_size = 4
 
 [sub_resource type="Animation" id="Animation_5pc8e"]
 length = 0.001
@@ -31,24 +37,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2i(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_0wq3e"]
-resource_name = "idle"
-length = 0.80002004
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [Vector2i(0, 2), Vector2i(0, 2), Vector2i(1, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_0rrsf"]
@@ -67,6 +55,24 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [Vector2i(0, 1), Vector2i(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0wq3e"]
+resource_name = "idle"
+length = 0.80002004
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(0, 2), Vector2i(1, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_ven3s"]
@@ -144,10 +150,10 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.41144925, 0.39308855)
 theme = SubResource("Theme_0rrsf")
-placeholder_text = "placeholder"
+placeholder_text = "Answer!"
+alignment = 1
 max_length = 4
 virtual_keyboard_type = 5
-flat = true
 caret_blink = true
 metadata/_edit_use_anchors_ = true
 
@@ -168,6 +174,26 @@ grow_vertical = 2
 scale = Vector2(0.5500171, 0.9889873)
 text = "placeholder"
 label_settings = SubResource("LabelSettings_xfrnx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="directions" type="Label" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.291245
+offset_top = -54.08351
+offset_right = 90.708755
+offset_bottom = -15.847183
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5500171, 0.9889873)
+text = "placeholder"
+label_settings = SubResource("LabelSettings_0wq3e")
 horizontal_alignment = 1
 vertical_alignment = 1
 

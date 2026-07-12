@@ -9,18 +9,21 @@ signal answered
 
 
 func _ready() -> void:
-	pass
-	$Control.hide()
+	$Control/LineEdit.hide()
 	$Control/Label.set_text(equation)
+	if derivative:
+		$Control/directions.set_text("Differentiate!")
+	else:
+		$Control/directions.set_text("Integrate!")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
-		$Control.show()
+		$Control/LineEdit.show()
 		$Control/LineEdit.grab_focus()
 		$Control/LineEdit.edit()
 	
 func _on_area_2d_body_exited(_body: Node2D) -> void:
-	$Control.hide()
+	$Control/LineEdit.hide()
 	
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	if new_text == answer:

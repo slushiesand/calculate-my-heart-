@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://b5uspgfbbr3lk"]
+[gd_scene load_steps=13 format=4 uid="uid://b5uspgfbbr3lk"]
 
 [ext_resource type="Script" uid="uid://cu8srh1p6q4lw" path="res://level.gd" id="1_16g7q"]
 [ext_resource type="Texture2D" uid="uid://d4f6np5c6oh5x" path="res://icon.svg" id="2_obyai"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dxspdofxrravn" path="res://equation.tscn" id="5_pk40j"]
 [ext_resource type="Texture2D" uid="uid://6io3t6tn62hc" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 2/7.png" id="6_e0a3d"]
 [ext_resource type="Texture2D" uid="uid://dgd0p17bghf0h" path="res://art/craftpix-891123-free-pixel-art-street-2d-backgrounds/PNG/City1/Pale/road&border.png" id="6_obyai"]
+[ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="8_jwave"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j2q8x"]
 texture = ExtResource("2_obyai")
@@ -179,10 +180,18 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_j2q8x")
 sources/2 = SubResource("TileSetAtlasSource_jwave")
 
+[sub_resource type="LabelSettings" id="LabelSettings_pk40j"]
+font = ExtResource("8_jwave")
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node" type="Node"]
 script = ExtResource("1_16g7q")
 toSolve = 1
 level = "uid://b5uspgfbbr3lk"
+timed = true
+music = 4
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -212,4 +221,29 @@ position = Vector2(644.37036, 435)
 scale = Vector2(0.65690583, 0.5513118)
 texture = ExtResource("6_obyai")
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 576.0
+offset_top = 48.0
+offset_right = 616.0
+offset_bottom = 88.0
+
+[node name="Timer" type="Timer" parent="Control"]
+wait_time = 30.0
+one_shot = true
+
+[node name="visibleTimer" type="Label" parent="Control"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = -56.0
+offset_right = 128.0
+offset_bottom = 48.0
+text = "00.00"
+label_settings = SubResource("LabelSettings_pk40j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="answered" from="equation" to="." method="_on_equation_answered"]
+[connection signal="timeout" from="Control/Timer" to="." method="_on_timer_timeout"]
