@@ -1,0 +1,160 @@
+[gd_scene load_steps=9 format=3 uid="uid://cy0w48cm7ngxa"]
+
+[ext_resource type="Script" uid="uid://dbbteyoc5e8yy" path="res://text-player.gd" id="1_7a8ye"]
+[ext_resource type="Texture2D" uid="uid://dle5sa27m4jkk" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 2/1.png" id="1_s2ta7"]
+[ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="2_ayt76"]
+[ext_resource type="Script" uid="uid://iibput3g1lr0" path="res://text_played.gd" id="4_0a7ni"]
+
+[sub_resource type="Animation" id="Animation_7a8ye"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["[b]The Power Rule[/b]
+
+Used in Calculus as a shorthand way to find the [color={#956262}]Derivative[/color] of a Function.
+"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("controls:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ayt76"]
+resource_name = "new_animation"
+length = 8.000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3, 5, 5.9999967, 7.0000005),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": ["[b]The Power Rule[/b]
+
+", "[b]The Power Rule[/b]
+
+Used in Calculus as a shorthand way to find the [color={#956262}]derivative[/color] of a Function.
+To use this rule, multiply the coefficent by the value of the exponent, then decrease the value of the exponent by 1.", "[b]The Power Rule[/b]
+
+Used in Calculus as a shorthand way to find the [color={#956262}]derivative[/color] of a Function.
+To use this rule, multiply the coefficent by the value of the exponent, then decrease the value of the exponent by 1.", "[b]The Power Rule[/b]
+
+Used in Calculus as a shorthand way to find the [color={#956262}]derivative[/color] of a Function.
+To use this rule, multiply the coefficent by the value of the exponent, then decrease the value of the exponent by 1.
+
+Mathemetropolis is a lively, up-and-coming city of Functions and Operations! Streets bustle with diligent office workers and rowdy youth, all who collectively work towards a bright, orderly future.", "[b]The Power Rule[/b]
+
+Used in Calculus as a shorthand way to find the [color={#956262}]derivative[/color] of a Function.
+To use this rule, multiply the coefficent by the value of the exponent, then decrease the value of the exponent by 1.
+
+Mathemetropolis is a lively, up-and-coming city of Functions and Operations! Streets bustle with diligent office workers and rowdy youth, all who collectively work towards a bright, orderly future.", "[b]The Power Rule[/b]
+
+Used in Calculus as a shorthand way to find the [color={#956262}]derivative[/color] of a Function.
+To use this rule, multiply the coefficent by the value of the exponent, then decrease the value of the exponent by 1.
+
+Mathemetropolis is a lively, up-and-coming city of Functions and Operations! Streets bustle with diligent office workers and rowdy youth, all who collectively work towards a bright, orderly future.
+
+... But on rooftops and in alleyways, some scheme to swoop in, achieving clarity in their own way..."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("controls:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0a7ni"]
+_data = {
+&"RESET": SubResource("Animation_7a8ye"),
+&"new_animation": SubResource("Animation_ayt76")
+}
+
+[sub_resource type="Theme" id="Theme_s2ta7"]
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 7
+RichTextLabel/font_sizes/bold_font_size = 64
+RichTextLabel/font_sizes/normal_font_size = 48
+RichTextLabel/fonts/bold_font = ExtResource("2_ayt76")
+RichTextLabel/fonts/normal_font = ExtResource("2_ayt76")
+
+[node name="Node" type="Node"]
+script = ExtResource("1_7a8ye")
+level = "uid://b5uspgfbbr3lk"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(711, 400)
+scale = Vector2(2.4691358, 2.4691358)
+texture = ExtResource("1_s2ta7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0a7ni")
+}
+autoplay = "new_animation"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -641.0
+offset_top = 31.0
+offset_right = 641.0
+offset_bottom = 718.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "[b]The Power Rule[/b]
+
+Used in Calculus as a shorthand way to find the [color={#956262}]Derivative[/color] of a Function.
+"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("4_0a7ni")
+
+[node name="controls" type="RichTextLabel" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -641.0
+offset_top = 670.0
+offset_right = 641.0
+offset_bottom = 718.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+theme_override_colors/default_color = Color(0.41598046, 0.41598043, 0.4159804, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+bbcode_enabled = true
+text = "(click space to continue)"
+scroll_active = false
+horizontal_alignment = 1
+
+[connection signal="onward" from="." to="RichTextLabel" method="_on_text_onward"]

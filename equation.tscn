@@ -1,24 +1,111 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxspdofxrravn"]
+[gd_scene load_steps=12 format=3 uid="uid://dxspdofxrravn"]
 
-[ext_resource type="Texture2D" uid="uid://d4f6np5c6oh5x" path="res://icon.svg" id="1_gbn5y"]
 [ext_resource type="Script" uid="uid://cef4mtpddvl0d" path="res://equation.gd" id="1_xfrnx"]
+[ext_resource type="Texture2D" uid="uid://bjnu2bqh28yb8" path="res://art/npc.png" id="2_0wq3e"]
+[ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="3_0wq3e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbn5y"]
-size = Vector2(98.88786, 80.62698)
+size = Vector2(372.68292, 153.38455)
+
+[sub_resource type="Theme" id="Theme_0rrsf"]
+default_font = ExtResource("3_0wq3e")
+default_font_size = 16
+LineEdit/font_sizes/font_size = 16
 
 [sub_resource type="LabelSettings" id="LabelSettings_xfrnx"]
-font_size = 22
+font = ExtResource("3_0wq3e")
+font_size = 32
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_5pc8e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0wq3e"]
+resource_name = "idle"
+length = 0.80002004
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(0, 2), Vector2i(1, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_0rrsf"]
+resource_name = "derivative"
+length = 0.80002004
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ven3s"]
+resource_name = "integral"
+length = 0.80002004
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jedwf"]
+_data = {
+&"RESET": SubResource("Animation_5pc8e"),
+&"derivative": SubResource("Animation_0rrsf"),
+&"idle": SubResource("Animation_0wq3e"),
+&"integral": SubResource("Animation_ven3s")
+}
 
 [node name="equation" type="Node2D"]
 script = ExtResource("1_xfrnx")
 equation = "test"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2.3841858e-07, 0.052825928)
-scale = Vector2(-0.6027982, -0.5742003)
-texture = ExtResource("1_gbn5y")
+texture_filter = 1
+position = Vector2(-2.842171e-14, 0)
+scale = Vector2(2.5715, 2.5850666)
+texture = ExtResource("2_0wq3e")
+hframes = 2
+vframes = 3
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0.020198822, -0.2967856)
@@ -26,27 +113,29 @@ rotation = -3.1415927
 scale = Vector2(0.6544933, 0.71127653)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.03086257, -10.2587185)
 rotation = -3.1415925
-scale = Vector2(1.205321, 1.2649081)
+scale = Vector2(1.2053208, 1.2649081)
 shape = SubResource("RectangleShape2D_gbn5y")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -96.0
-offset_top = -114.99999
+offset_top = -172.0
 offset_right = -56.0
-offset_bottom = -74.99999
+offset_bottom = -132.0
 scale = Vector2(4.7739735, 2.036216)
 metadata/_edit_use_anchors_ = true
 
 [node name="LineEdit" type="LineEdit" parent="Control"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.37284437
-anchor_top = 0.42114934
+anchor_top = 0.3352058
 anchor_right = 0.7728445
-anchor_bottom = 0.42114943
+anchor_bottom = 0.87202835
 offset_left = -11.981207
 offset_top = 8.2004795
 offset_right = 56.58129
@@ -54,9 +143,12 @@ offset_bottom = 39.200478
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.41144925, 0.39308855)
+theme = SubResource("Theme_0rrsf")
+placeholder_text = "placeholder"
 max_length = 4
 virtual_keyboard_type = 5
-clear_button_enabled = true
+flat = true
+caret_blink = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Control"]
@@ -68,9 +160,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -34.662838
-offset_top = -25.893291
+offset_top = -36.69764
 offset_right = 91.33716
-offset_bottom = 5.1067085
+offset_bottom = 1.5386887
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5500171, 0.9889873)
@@ -78,6 +170,12 @@ text = "placeholder"
 label_settings = SubResource("LabelSettings_xfrnx")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jedwf")
+}
+autoplay = "idle"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
