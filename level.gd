@@ -3,7 +3,7 @@ extends Node
 @export var toSolve = 0
 @export_file var level
 @export var timed = false
-@export var music = 0
+@export var music = 1
 var hasSolved = 0
 
 @onready var timer = $Control/Timer

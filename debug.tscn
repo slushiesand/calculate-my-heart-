@@ -189,7 +189,7 @@ outline_color = Color(0, 0, 0, 1)
 [node name="Node" type="Node"]
 script = ExtResource("1_16g7q")
 toSolve = 1
-level = "uid://b5uspgfbbr3lk"
+level = "uid://qjyoy3wl4uwt"
 timed = true
 music = 4
 

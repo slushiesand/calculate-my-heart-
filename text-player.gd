@@ -4,17 +4,19 @@ signal onward(value: int)
 
 @export_file var level
 @export var max_onward = 0
+@export var music = 1
 
 var onward_value = 0
 
 func _ready() -> void:
-	pass 
+	GlobalAudioStreamPlayer.play_music_level(music) 
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("space"):
 		
 		onward_value += 1
+		print(onward_value)
 		
 		if onward_value == max_onward + 1:
 			get_tree().change_scene_to_file(level)
