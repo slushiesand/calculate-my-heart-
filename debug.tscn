@@ -188,10 +188,8 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Node" type="Node"]
 script = ExtResource("1_16g7q")
-toSolve = 1
+toSolve = 3
 level = "uid://qjyoy3wl4uwt"
-timed = true
-music = 4
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -200,12 +198,6 @@ tile_set = SubResource("TileSet_112p8")
 
 [node name="deri" parent="." instance=ExtResource("3_txpwr")]
 position = Vector2(168, 141)
-
-[node name="equation" parent="." instance=ExtResource("5_pk40j")]
-position = Vector2(997, 603)
-equation = "6x^2"
-answer = "12x"
-derivative = true
 
 [node name="background" type="Sprite2D" parent="."]
 z_index = -1
@@ -245,5 +237,31 @@ label_settings = SubResource("LabelSettings_pk40j")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="answered" from="equation" to="." method="_on_equation_answered"]
+[node name="equation" parent="." instance=ExtResource("5_pk40j")]
+position = Vector2(997, 603)
+equation = "6x^2"
+answer = "12x"
+derivative = true
+
+[node name="equation2" parent="." instance=ExtResource("5_pk40j")]
+visible = false
+position = Vector2(264, 368)
+equation = "6x^2"
+answer = "12x"
+derivative = true
+onward_value = 1
+
+[node name="equation3" parent="." instance=ExtResource("5_pk40j")]
+visible = false
+position = Vector2(976, 224)
+equation = "6x^2"
+answer = "12x"
+derivative = true
+onward_value = 2
+
 [connection signal="timeout" from="Control/Timer" to="." method="_on_timer_timeout"]
+[connection signal="answered" from="equation" to="." method="_on_equation_answered"]
+[connection signal="new_equation" from="equation" to="equation2" method="_on_new_equation"]
+[connection signal="answered" from="equation2" to="." method="_on_equation_answered"]
+[connection signal="new_equation" from="equation2" to="equation3" method="_on_new_equation"]
+[connection signal="answered" from="equation3" to="." method="_on_equation_answered"]

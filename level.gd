@@ -14,14 +14,13 @@ func _ready() -> void:
 		$Control/visibleTimer.show()
 		timer.start()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$Control/visibleTimer.set_text( str(timer.get_time_left()).pad_decimals(2) )
 
 func _on_equation_answered() -> void:
 	hasSolved += 1
 	
 	if hasSolved == toSolve:
-		print("transition")
 		
 		await get_tree().create_timer(2.0).timeout
 		get_tree().change_scene_to_file(level)

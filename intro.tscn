@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cy0w48cm7ngxa"]
+[gd_scene load_steps=8 format=3 uid="uid://cy0w48cm7ngxa"]
 
 [ext_resource type="Script" uid="uid://dbbteyoc5e8yy" path="res://text-player.gd" id="1_7a8ye"]
 [ext_resource type="Texture2D" uid="uid://dle5sa27m4jkk" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 2/1.png" id="1_s2ta7"]
-[ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="2_ayt76"]
+[ext_resource type="Theme" uid="uid://csalyp5076wag" path="res://rich-text.tres" id="3_0a7ni"]
 [ext_resource type="Script" uid="uid://iibput3g1lr0" path="res://text_played.gd" id="4_0a7ni"]
 
 [sub_resource type="Animation" id="Animation_7a8ye"]
@@ -61,17 +61,17 @@ To use this rule, multiply the coefficent by the value of the exponent, then dec
 Used in Calculus as a shorthand way to find the [color={#956262}]derivative[/color] of a Function.
 To use this rule, multiply the coefficent by the value of the exponent, then decrease the value of the exponent by 1.
 
-Mathemetropolis is a lively, up-and-coming city of Functions and Operations! Streets bustle with diligent office workers and rowdy youth, all who collectively work towards a bright, orderly future.", "[b]The Power Rule[/b]
+[b]Mathemetropolis[/b] is a lively, up-and-coming city of Functions and Operations! Streets bustle with diligent office workers and rowdy youth, all who collectively work towards a bright, orderly future.", "[b]The Power Rule[/b]
 
 Used in Calculus as a shorthand way to find the [color={#956262}]derivative[/color] of a Function.
 To use this rule, multiply the coefficent by the value of the exponent, then decrease the value of the exponent by 1.
 
-Mathemetropolis is a lively, up-and-coming city of Functions and Operations! Streets bustle with diligent office workers and rowdy youth, all who collectively work towards a bright, orderly future.", "[b]The Power Rule[/b]
+[b]Mathemetropolis[/b] is a lively, up-and-coming city of Functions and Operations! Streets bustle with diligent office workers and rowdy youth, all who collectively work towards a bright, orderly future.", "[b]The Power Rule[/b]
 
 Used in Calculus as a shorthand way to find the [color={#956262}]derivative[/color] of a Function.
 To use this rule, multiply the coefficent by the value of the exponent, then decrease the value of the exponent by 1.
 
-Mathemetropolis is a lively, up-and-coming city of Functions and Operations! Streets bustle with diligent office workers and rowdy youth, all who collectively work towards a bright, orderly future.
+[b]Mathemetropolis[/b] is a lively, up-and-coming city of Functions and Operations! Streets bustle with diligent office workers and rowdy youth, all who collectively work towards a bright, orderly future.
 
 ... But on rooftops and in alleyways, some scheme to swoop in, achieving clarity in their own way..."]
 }
@@ -94,18 +94,9 @@ _data = {
 &"new_animation": SubResource("Animation_ayt76")
 }
 
-[sub_resource type="Theme" id="Theme_s2ta7"]
-RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
-RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
-RichTextLabel/constants/outline_size = 7
-RichTextLabel/font_sizes/bold_font_size = 64
-RichTextLabel/font_sizes/normal_font_size = 48
-RichTextLabel/fonts/bold_font = ExtResource("2_ayt76")
-RichTextLabel/fonts/normal_font = ExtResource("2_ayt76")
-
 [node name="Node" type="Node"]
 script = ExtResource("1_7a8ye")
-level = "uid://b5uspgfbbr3lk"
+level = "uid://c17t35cyh7ht8"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -129,7 +120,7 @@ offset_top = 31.0
 offset_right = 641.0
 offset_bottom = 718.0
 grow_horizontal = 2
-theme = SubResource("Theme_s2ta7")
+theme = ExtResource("3_0a7ni")
 bbcode_enabled = true
 text = "[b]The Power Rule[/b]
 
@@ -149,11 +140,11 @@ offset_top = 670.0
 offset_right = 641.0
 offset_bottom = 718.0
 grow_horizontal = 2
-theme = SubResource("Theme_s2ta7")
+theme = ExtResource("3_0a7ni")
 theme_override_colors/default_color = Color(0.41598046, 0.41598043, 0.4159804, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 bbcode_enabled = true
-text = "(click space to continue)"
+text = "(click enter to continue)"
 scroll_active = false
 horizontal_alignment = 1
 

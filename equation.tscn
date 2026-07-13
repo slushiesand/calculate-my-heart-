@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxspdofxrravn"]
+[gd_scene load_steps=15 format=3 uid="uid://dxspdofxrravn"]
 
 [ext_resource type="Script" uid="uid://cef4mtpddvl0d" path="res://equation.gd" id="1_xfrnx"]
 [ext_resource type="Texture2D" uid="uid://bjnu2bqh28yb8" path="res://art/npc.png" id="2_0wq3e"]
 [ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="3_0wq3e"]
+[ext_resource type="AudioStream" uid="uid://c6nk6vec2vm8s" path="res://sounds/zapsplat_multimedia_gameshow_correct_answer_ping_ring_chime_006_92779.mp3" id="4_0rrsf"]
+[ext_resource type="AudioStream" uid="uid://bwx2btur2xt7y" path="res://sounds/zapsplat_multimedia_ui_tone_short_thin_clicky_error_incorrect_001_92785.mp3" id="5_ven3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbn5y"]
 size = Vector2(372.68292, 153.38455)
@@ -150,7 +152,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.41144925, 0.39308855)
 theme = SubResource("Theme_0rrsf")
-placeholder_text = "Answer!"
+placeholder_text = "Entr=Ans"
 alignment = 1
 max_length = 4
 virtual_keyboard_type = 5
@@ -203,6 +205,15 @@ libraries = {
 }
 autoplay = "idle"
 
+[node name="correctSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0rrsf")
+volume_db = -2.0
+
+[node name="incorrectSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ven3s")
+volume_db = 5.0
+
+[connection signal="new_equation" from="." to="." method="_on_new_equation"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="text_submitted" from="Control/LineEdit" to="." method="_on_line_edit_text_submitted"]

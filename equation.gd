@@ -2,11 +2,13 @@ extends Node2D
 
 @export var equation = ""
 @export var answer = ""
-#note: answer should never use W, A, S, or space to prevent movement whilst typing
+#note: answer should never use W, A, or S to prevent movement whilst typing
 @export var derivative = false
+@export var onward_value = 0
+var onward_increase = 0
 
 signal answered
-
+signal new_equation(value: int)
 
 func _ready() -> void:
 	$Control/LineEdit.hide()
@@ -27,19 +29,24 @@ func _on_area_2d_body_exited(_body: Node2D) -> void:
 	
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	if new_text == answer:
+		$correctSFX.play()
 		$Control.hide()
 		if derivative:
 			$AnimationPlayer.play("derivative")
 		else:
 			$AnimationPlayer.play("integral")
-		print("yes")
 		
 		answered.emit()
+		onward_increase += 1
+		new_equation.emit(onward_increase)
 		await get_tree().create_timer(2.0).timeout
 		
 		free()
 		
 	else:
-		print("no")
-		# sfx prob
-		
+		$incorrectSFX.play()
+
+func _on_new_equation(value: int) -> void:
+	onward_increase = value
+	if (value == onward_value) and !visible:
+		show()

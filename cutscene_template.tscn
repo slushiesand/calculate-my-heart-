@@ -1,12 +1,12 @@
 [gd_scene load_steps=17 format=3 uid="uid://qjyoy3wl4uwt"]
 
-[ext_resource type="Script" uid="uid://dbbteyoc5e8yy" path="res://text-player.gd" id="1_bl24s"]
-[ext_resource type="Texture2D" uid="uid://dle5sa27m4jkk" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 2/1.png" id="2_u4yv4"]
-[ext_resource type="Texture2D" uid="uid://b200cfhk222cf" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 1/4.png" id="3_53jq0"]
-[ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="3_p30sb"]
-[ext_resource type="Script" uid="uid://iibput3g1lr0" path="res://text_played.gd" id="4_53jq0"]
-[ext_resource type="Texture2D" uid="uid://bj732md4hider" path="res://art/deri-portrait.png" id="5_u4yv4"]
-[ext_resource type="Texture2D" uid="uid://dd20urhvcmlpa" path="res://art/ral-portrait.png" id="6_p30sb"]
+[ext_resource type="Script" uid="uid://dbbteyoc5e8yy" path="res://text-player.gd" id="1_vvk4m"]
+[ext_resource type="Texture2D" uid="uid://dle5sa27m4jkk" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 2/1.png" id="2_fkuyv"]
+[ext_resource type="Texture2D" uid="uid://b200cfhk222cf" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 1/4.png" id="3_mv4tq"]
+[ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="4_q4ppm"]
+[ext_resource type="Script" uid="uid://iibput3g1lr0" path="res://text_played.gd" id="5_igpyx"]
+[ext_resource type="Texture2D" uid="uid://bj732md4hider" path="res://art/deri-portrait.png" id="6_yw851"]
+[ext_resource type="Texture2D" uid="uid://dd20urhvcmlpa" path="res://art/ral-portrait.png" id="7_runcu"]
 
 [sub_resource type="Animation" id="Animation_7a8ye"]
 length = 0.001
@@ -27,23 +27,23 @@ RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
 RichTextLabel/constants/outline_size = 7
 RichTextLabel/font_sizes/bold_font_size = 64
 RichTextLabel/font_sizes/normal_font_size = 48
-RichTextLabel/fonts/bold_font = ExtResource("3_p30sb")
-RichTextLabel/fonts/normal_font = ExtResource("3_p30sb")
+RichTextLabel/fonts/bold_font = ExtResource("4_q4ppm")
+RichTextLabel/fonts/normal_font = ExtResource("4_q4ppm")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p30sb"]
-atlas = ExtResource("5_u4yv4")
+atlas = ExtResource("6_yw851")
 region = Rect2(0, 0, 640, 640)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_53jq0"]
-atlas = ExtResource("5_u4yv4")
+atlas = ExtResource("6_yw851")
 region = Rect2(640, 0, 640, 640)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3q24f"]
-atlas = ExtResource("6_p30sb")
+atlas = ExtResource("7_runcu")
 region = Rect2(0, 0, 640, 640)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ye5a"]
-atlas = ExtResource("6_p30sb")
+atlas = ExtResource("7_runcu")
 region = Rect2(640, 0, 640, 640)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_53jq0"]
@@ -72,7 +72,7 @@ animations = [{
 }]
 
 [node name="Node" type="Node"]
-script = ExtResource("1_bl24s")
+script = ExtResource("1_vvk4m")
 level = "uid://b5uspgfbbr3lk"
 max_onward = 1
 
@@ -81,12 +81,13 @@ z_index = -2
 texture_filter = 1
 position = Vector2(711, 398)
 scale = Vector2(2.4691358, 2.4691358)
-texture = ExtResource("2_u4yv4")
+texture = ExtResource("2_fkuyv")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
 texture_filter = 1
-position = Vector2(-2.43, -61.155)
-texture = ExtResource("3_53jq0")
+position = Vector2(-0.31500125, -61.155)
+scale = Vector2(1.0025, 1.0024999)
+texture = ExtResource("3_mv4tq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -109,7 +110,7 @@ bbcode_enabled = true
 text = "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
 scroll_active = false
 horizontal_alignment = 1
-script = ExtResource("4_53jq0")
+script = ExtResource("5_igpyx")
 
 [node name="controls" type="RichTextLabel" parent="."]
 texture_filter = 1
@@ -125,7 +126,7 @@ theme = SubResource("Theme_s2ta7")
 theme_override_colors/default_color = Color(0.41598046, 0.41598043, 0.4159804, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 bbcode_enabled = true
-text = "(click space to continue)"
+text = "(click enter to continue)"
 scroll_active = false
 horizontal_alignment = 1
 
@@ -137,7 +138,7 @@ scale = Vector2(0.533707, 0.533707)
 sprite_frames = SubResource("SpriteFrames_53jq0")
 animation = &"d_talk"
 autoplay = "d_talk"
-script = ExtResource("4_53jq0")
+script = ExtResource("5_igpyx")
 
 [node name="char2" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -148,7 +149,7 @@ scale = Vector2(0.533707, 0.533707)
 sprite_frames = SubResource("SpriteFrames_53jq0")
 animation = &"r_talk"
 autoplay = "r_talk"
-script = ExtResource("4_53jq0")
+script = ExtResource("5_igpyx")
 onward_value = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -175,7 +176,7 @@ bbcode_enabled = true
 text = "this is the second text"
 scroll_active = false
 horizontal_alignment = 1
-script = ExtResource("4_53jq0")
+script = ExtResource("5_igpyx")
 onward_value = 1
 
 [connection signal="onward" from="." to="RichTextLabel" method="_on_text_onward"]

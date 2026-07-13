@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-var coyote_frames = 3
+var coyote_frames = 4
 var is_coyote = false
 var jumped = false
 var facing = 1
