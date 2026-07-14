@@ -100,7 +100,7 @@ tile_map_data = PackedByteArray("AAAAAAsAAgADAAEAAAAAAAAAAgADAAEAAAAAAAEAAgADAAE
 tile_set = SubResource("TileSet_112p8")
 
 [node name="deri" parent="." instance=ExtResource("4_2abpt")]
-position = Vector2(168, 141)
+position = Vector2(168, 231)
 
 [node name="background" type="Sprite2D" parent="."]
 modulate = Color(0, 1, 0, 1)
