@@ -4,6 +4,7 @@ extends Node2D
 @export var answer = ""
 #note: answer should never use W, A, or S to prevent movement whilst typing
 @export var derivative = false
+@export var indeterminate = false
 @export var onward_value = 0
 var onward_increase = 0
 
@@ -13,6 +14,11 @@ signal new_equation(value: int)
 func _ready() -> void:
 	$Control/LineEdit.hide()
 	$Control/Label.set_text(equation)
+	if indeterminate:
+		$AnimationPlayer.play("indeterminate")
+	else:
+		$AnimationPlayer.play("idle")
+		
 	if derivative:
 		$Control/directions.set_text("Differentiate!")
 	else:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://qjyoy3wl4uwt"]
+[gd_scene load_steps=20 format=3 uid="uid://qjyoy3wl4uwt"]
 
 [ext_resource type="Script" uid="uid://dbbteyoc5e8yy" path="res://text-player.gd" id="1_vvk4m"]
 [ext_resource type="Texture2D" uid="uid://dle5sa27m4jkk" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 2/1.png" id="2_fkuyv"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="4_q4ppm"]
 [ext_resource type="Script" uid="uid://iibput3g1lr0" path="res://text_played.gd" id="5_igpyx"]
 [ext_resource type="Texture2D" uid="uid://bj732md4hider" path="res://art/deri-portrait.png" id="6_yw851"]
+[ext_resource type="Texture2D" uid="uid://dptv6lut0ilc6" path="res://art/lim-portrait.png" id="7_fkuyv"]
 [ext_resource type="Texture2D" uid="uid://dd20urhvcmlpa" path="res://art/ral-portrait.png" id="7_runcu"]
 
 [sub_resource type="Animation" id="Animation_7a8ye"]
@@ -38,6 +39,14 @@ region = Rect2(0, 0, 640, 640)
 atlas = ExtResource("6_yw851")
 region = Rect2(640, 0, 640, 640)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv4tq"]
+atlas = ExtResource("7_fkuyv")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4ppm"]
+atlas = ExtResource("7_fkuyv")
+region = Rect2(640, 0, 640, 640)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_3q24f"]
 atlas = ExtResource("7_runcu")
 region = Rect2(0, 0, 640, 640)
@@ -61,6 +70,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_mv4tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4ppm")
+}],
+"loop": true,
+"name": &"l_talk",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_3q24f")
 }, {
 "duration": 1.0,
@@ -74,7 +94,7 @@ animations = [{
 [node name="Node" type="Node"]
 script = ExtResource("1_vvk4m")
 level = "uid://b5uspgfbbr3lk"
-max_onward = 1
+max_onward = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -2
@@ -152,6 +172,18 @@ autoplay = "r_talk"
 script = ExtResource("5_igpyx")
 onward_value = 1
 
+[node name="char3" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(1074, 324.00003)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"l_talk"
+autoplay = "l_talk"
+script = ExtResource("5_igpyx")
+onward_value = 2
+
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
 offset_left = -1.0
@@ -179,7 +211,28 @@ horizontal_alignment = 1
 script = ExtResource("5_igpyx")
 onward_value = 1
 
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "and i am sane and normal!"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("5_igpyx")
+onward_value = 2
+
 [connection signal="onward" from="." to="RichTextLabel" method="_on_text_onward"]
 [connection signal="onward" from="." to="char1" method="_on_text_onward"]
 [connection signal="onward" from="." to="char2" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel2" method="_on_text_onward"]
+[connection signal="onward" from="." to="char3" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel3" method="_on_text_onward"]

@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://86s1t0jf4gqc"]
+
+[ext_resource type="Script" uid="uid://bb6fct28qhh3a" path="res://ral.gd" id="1_6qhxs"]
+[ext_resource type="Texture2D" uid="uid://kxt88p7scnuu" path="res://art/ral.png" id="2_d861c"]
+[ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="3_fwq8m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx4lf"]
+size = Vector2(84, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx4db"]
+atlas = ExtResource("2_d861c")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lf1v"]
+atlas = ExtResource("2_d861c")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dguho"]
+atlas = ExtResource("2_d861c")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p2trt"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_sx4db")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lf1v")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_dguho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lf1v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ral" type="Area2D"]
+script = ExtResource("1_6qhxs")
+text = "Don't wait for me to tell you what to do. You don't seem like the type, anyway."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -1)
+shape = SubResource("RectangleShape2D_fx4lf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.393, 2.518)
+sprite_frames = SubResource("SpriteFrames_p2trt")
+autoplay = "default"
+frame = 1
+frame_progress = 0.81131613
+
+[node name="Label" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 5.0
+offset_top = -158.0
+offset_right = 255.0
+offset_bottom = -21.0
+theme_override_colors/font_color = Color(0.2901961, 0.46666667, 0.5019608, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_fwq8m")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

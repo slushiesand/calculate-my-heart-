@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://xtip1nmw6wsk" path="res://art/craftpix-891123-free-pixel-art-street-2d-backgrounds/PNG/City1/Bright/road&border-TileSet.png" id="3_sx4db"]
 [ext_resource type="PackedScene" uid="uid://cqjncaeeix62c" path="res://deri.tscn" id="4_7lf1v"]
 [ext_resource type="Texture2D" uid="uid://bmam8qm0wk1vg" path="res://art/craftpix-891123-free-pixel-art-street-2d-backgrounds/PNG/City4/Bright/City4.png" id="5_yxclo"]
-[ext_resource type="Texture2D" uid="uid://dgd0p17bghf0h" path="res://art/craftpix-891123-free-pixel-art-street-2d-backgrounds/PNG/City1/Pale/road&border.png" id="6_p2trt"]
 [ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="7_n01hv"]
 [ext_resource type="PackedScene" uid="uid://dxspdofxrravn" path="res://equation.tscn" id="8_7odde"]
 [ext_resource type="Theme" uid="uid://csalyp5076wag" path="res://rich-text.tres" id="9_0bk12"]
+[ext_resource type="PackedScene" uid="uid://86s1t0jf4gqc" path="res://ral.tscn" id="9_yxclo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j2q8x"]
 texture = ExtResource("2_fx4lf")
@@ -207,12 +207,12 @@ position = Vector2(652, 372)
 scale = Vector2(0.6936946, 0.6936947)
 texture = ExtResource("5_yxclo")
 
-[node name="backGROUND" type="Sprite2D" parent="."]
-z_index = -1
-texture_filter = 1
-position = Vector2(644.37036, 435)
-scale = Vector2(0.65690583, 0.5513118)
-texture = ExtResource("6_p2trt")
+[node name="ColorRect" type="ColorRect" parent="background"]
+offset_left = -939.8949
+offset_top = -543.46674
+offset_right = 899.53125
+offset_bottom = 490.1291
+color = Color(1, 1, 1, 0.19607843)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -242,9 +242,10 @@ vertical_alignment = 1
 texture_filter = 1
 position = Vector2(824, 519)
 equation = "3x^2"
-answer = "x^3"
+answer = "x^3+c"
 
 [node name="equation2" parent="." instance=ExtResource("8_7odde")]
+visible = false
 texture_filter = 1
 position = Vector2(993, 227)
 equation = "x^5"
@@ -264,6 +265,10 @@ text = "[b]Integration Power Rule:[/b] Add 1 to the exponent, divide the functio
   4x^2 -> (4x^3)/3+c"
 scroll_active = false
 horizontal_alignment = 1
+
+[node name="ral" parent="." instance=ExtResource("9_yxclo")]
+position = Vector2(321, 487)
+text = "Do it like my example; No spaces in between."
 
 [connection signal="timeout" from="Control/Timer" to="." method="_on_timer_timeout"]
 [connection signal="answered" from="equation" to="." method="_on_equation_answered"]
