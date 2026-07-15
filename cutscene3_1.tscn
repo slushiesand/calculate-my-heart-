@@ -1,0 +1,593 @@
+[gd_scene load_steps=20 format=3 uid="uid://b8xntcpq532hr"]
+
+[ext_resource type="Script" uid="uid://dbbteyoc5e8yy" path="res://text-player.gd" id="1_3rdmq"]
+[ext_resource type="Texture2D" uid="uid://dle5sa27m4jkk" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 2/1.png" id="2_fawj6"]
+[ext_resource type="Texture2D" uid="uid://b200cfhk222cf" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 1/4.png" id="3_b2qww"]
+[ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="4_pfibf"]
+[ext_resource type="Script" uid="uid://iibput3g1lr0" path="res://text_played.gd" id="5_f3y5k"]
+[ext_resource type="Texture2D" uid="uid://bj732md4hider" path="res://art/deri-portrait.png" id="6_5to1q"]
+[ext_resource type="Texture2D" uid="uid://dptv6lut0ilc6" path="res://art/lim-portrait.png" id="7_vng66"]
+[ext_resource type="Texture2D" uid="uid://dd20urhvcmlpa" path="res://art/ral-portrait.png" id="8_en4ao"]
+
+[sub_resource type="Animation" id="Animation_7a8ye"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Damn, why are there so many potholes on this side of the city? 
+I'm seriously going to get caught by--"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("char1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel2:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["[b]VAMPIRIC OPERATION, MISS DERI-VATIVE![/b]
+In the name of Newton, you shall get your justified punishment!"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("char2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ayt76"]
+resource_name = "new_animation"
+length = 10.000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Damn, why are there so many potholes on this side of the city? 
+At this rate, I'm seriously going to get caught by--"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.2666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("char1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.2666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel2:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3.2666667, 4.0666666, 5.2666664),
+"transitions": PackedFloat32Array(0.4204482, 1, 1),
+"update": 0,
+"values": ["", "[b]VAMPIRIC OPERATION, MISS DERI-VATIVE![/b]
+", "[b]VAMPIRIC OPERATION, MISS DERI-VATIVE![/b]
+In the name of Newton, you shall get your justified punishment!"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("char2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.27),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0a7ni"]
+_data = {
+&"RESET": SubResource("Animation_7a8ye"),
+&"new_animation": SubResource("Animation_ayt76")
+}
+
+[sub_resource type="Theme" id="Theme_s2ta7"]
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 7
+RichTextLabel/font_sizes/bold_font_size = 64
+RichTextLabel/font_sizes/normal_font_size = 48
+RichTextLabel/fonts/bold_font = ExtResource("4_pfibf")
+RichTextLabel/fonts/normal_font = ExtResource("4_pfibf")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p30sb"]
+atlas = ExtResource("6_5to1q")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53jq0"]
+atlas = ExtResource("6_5to1q")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv4tq"]
+atlas = ExtResource("7_vng66")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4ppm"]
+atlas = ExtResource("7_vng66")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q24f"]
+atlas = ExtResource("8_en4ao")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ye5a"]
+atlas = ExtResource("8_en4ao")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_53jq0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p30sb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53jq0")
+}],
+"loop": true,
+"name": &"d_talk",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mv4tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4ppm")
+}],
+"loop": true,
+"name": &"l_talk",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q24f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ye5a")
+}],
+"loop": true,
+"name": &"r_talk",
+"speed": 2.0
+}]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_3rdmq")
+level = "uid://b5uspgfbbr3lk"
+max_onward = 7
+music = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+position = Vector2(711, 398)
+scale = Vector2(2.4691358, 2.4691358)
+texture = ExtResource("2_fawj6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+texture_filter = 1
+position = Vector2(-0.31500125, -61.155)
+scale = Vector2(1.0025, 1.0024999)
+texture = ExtResource("3_b2qww")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0a7ni")
+}
+autoplay = "new_animation"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "Damn, why are there so many potholes on this side of the city? 
+I'm seriously going to get caught by--"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("5_f3y5k")
+
+[node name="controls" type="RichTextLabel" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -641.0
+offset_top = 670.0
+offset_right = 641.0
+offset_bottom = 718.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+theme_override_colors/default_color = Color(0.41598046, 0.41598043, 0.4159804, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+bbcode_enabled = true
+text = "(click enter to continue)"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="char1" type="AnimatedSprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(219, 323.78632)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"d_talk"
+autoplay = "d_talk"
+script = ExtResource("5_f3y5k")
+
+[node name="char2" type="AnimatedSprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(1074, 324.00003)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"r_talk"
+autoplay = "r_talk"
+script = ExtResource("5_f3y5k")
+
+[node name="char3" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(219, 323.78632)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"d_talk"
+autoplay = "d_talk"
+script = ExtResource("5_f3y5k")
+onward_value = 1
+
+[node name="char4" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(1074, 324.00003)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"r_talk"
+autoplay = "r_talk"
+script = ExtResource("5_f3y5k")
+onward_value = 2
+
+[node name="char5" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(219, 323.78632)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"d_talk"
+autoplay = "d_talk"
+script = ExtResource("5_f3y5k")
+onward_value = 3
+
+[node name="char6" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(1074, 324)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"r_talk"
+autoplay = "r_talk"
+script = ExtResource("5_f3y5k")
+onward_value = 4
+
+[node name="char7" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(219, 323.78632)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"d_talk"
+autoplay = "d_talk"
+script = ExtResource("5_f3y5k")
+onward_value = 5
+
+[node name="char8" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(1074, 324)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"d_talk"
+autoplay = "r_talk"
+script = ExtResource("5_f3y5k")
+onward_value = 6
+
+[node name="char9" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(219, 323.78632)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"d_talk"
+autoplay = "d_talk"
+script = ExtResource("5_f3y5k")
+onward_value = 7
+
+[node name="char10" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(1074, 324)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"d_talk"
+autoplay = "r_talk"
+script = ExtResource("5_f3y5k")
+onward_value = 8
+
+[node name="char11" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(219, 323.78632)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"d_talk"
+autoplay = "d_talk"
+script = ExtResource("5_f3y5k")
+onward_value = 9
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -1.0
+offset_top = 494.0
+offset_right = 1281.0
+offset_bottom = 721.0
+color = Color(0.7254902, 0.7254902, 0.7254902, 1)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "[b]VAMPIRIC OPERATION, MISS DERI-VATIVE![/b]
+In the name of Newton, you shall get your justified punishment!"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("5_f3y5k")
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "Aah... Hunter Ral! Why might that be?
+Not my services for the public, surely?"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("5_f3y5k")
+onward_value = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "That is a [b]deceitful[/b] description of what you do.
+You are no hero: You know well that differentiation can erase people's ambitions - their bodies, their selves - yet you still continue."
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("5_f3y5k")
+onward_value = 2
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "Hm... but have you considered that some people want that? Not to disappear, but to be unburdened?
+Not to mention I've never gone far enough to \"erase\" a function!"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("5_f3y5k")
+onward_value = 3
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "I have never seen you ask permission [b]once[/b] to enact your solving. What makes you think you have the sole right to decide how people live?"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("5_f3y5k")
+onward_value = 4
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "What makes you think [b]you[/b] do? Do you even decide your own life, Ral?
+Is this what you wanted to do when you were younger? Hunt petty criminals across the city, ignoring the real problems underneath our feet?"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("5_f3y5k")
+onward_value = 5
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "...
+I wanted to save people. 
+That's all."
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("5_f3y5k")
+onward_value = 6
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "Then...
+Maybe we're on the same page, after all."
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("5_f3y5k")
+onward_value = 7
+
+[connection signal="onward" from="." to="RichTextLabel" method="_on_text_onward"]
+[connection signal="onward" from="." to="char1" method="_on_text_onward"]
+[connection signal="onward" from="." to="char2" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel2" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel3" method="_on_text_onward"]
+[connection signal="onward" from="." to="char3" method="_on_text_onward"]
+[connection signal="onward" from="." to="char4" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel4" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel5" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel6" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel7" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel8" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel9" method="_on_text_onward"]
+[connection signal="onward" from="." to="char5" method="_on_text_onward"]
+[connection signal="onward" from="." to="char6" method="_on_text_onward"]
+[connection signal="onward" from="." to="char7" method="_on_text_onward"]
+[connection signal="onward" from="." to="char8" method="_on_text_onward"]
+[connection signal="onward" from="." to="char9" method="_on_text_onward"]
+[connection signal="onward" from="." to="char10" method="_on_text_onward"]
+[connection signal="onward" from="." to="char11" method="_on_text_onward"]

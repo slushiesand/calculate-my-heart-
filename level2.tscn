@@ -190,7 +190,7 @@ outline_color = Color(0, 0, 0, 1)
 [node name="Node" type="Node"]
 script = ExtResource("1_qulpo")
 toSolve = 2
-level = "uid://b5cm8i7isb5h8"
+level = "uid://bopd0wfv8l71h"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1

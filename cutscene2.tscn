@@ -11,10 +11,88 @@
 
 [sub_resource type="Animation" id="Animation_7a8ye"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["\"Being solved...\" that's what everyone wants for themselves in the end.
+But some people get so caught up in themselves that it becomes quite impossible to achieve..."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel2:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["[b]Deri![/b] You...
+Don't think you can run forever! Your unmistakable trail is easy to follow!"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel3:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Oops. That silly, silly hunter is on my tail again. I guess that's my clue to get out of here!
+... But at least there's unfinished business on the way."]
+}
 
 [sub_resource type="Animation" id="Animation_ayt76"]
 resource_name = "new_animation"
-length = 8.000004
+length = 9.000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.0000033),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "\"Being solved...\" that's what everyone wants for themselves in the end.
+But some people get so caught up in themselves that it becomes quite impossible to achieve..."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel2:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4, 6.000003),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "[b]Deri![/b] You...
+Don't think you can run forever! Your unmistakable trail is easy to follow!"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel3:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(7, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Oops. That silly, silly hunter is on my tail again. I guess that's my clue to get out of here!
+... But at least there's unfinished business on the way."]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0a7ni"]
 _data = {
@@ -93,7 +171,7 @@ animations = [{
 
 [node name="Node" type="Node"]
 script = ExtResource("1_nchri")
-level = "uid://b5uspgfbbr3lk"
+level = "uid://d1rbl8drbw1n5"
 max_onward = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -127,7 +205,8 @@ offset_bottom = 675.0
 grow_horizontal = 2
 theme = SubResource("Theme_s2ta7")
 bbcode_enabled = true
-text = "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
+text = "\"Being solved...\" that's what everyone wants for themselves in the end.
+But some people get so caught up in themselves that it becomes quite impossible to achieve..."
 scroll_active = false
 horizontal_alignment = 1
 script = ExtResource("5_q18ei")
@@ -161,26 +240,13 @@ autoplay = "d_talk"
 script = ExtResource("5_q18ei")
 
 [node name="char2" type="AnimatedSprite2D" parent="."]
-visible = false
 z_index = -1
 texture_filter = 1
-position = Vector2(1074, 324.00003)
+position = Vector2(219, 323.78632)
 scale = Vector2(0.533707, 0.533707)
 sprite_frames = SubResource("SpriteFrames_53jq0")
-animation = &"r_talk"
-autoplay = "r_talk"
-script = ExtResource("5_q18ei")
-onward_value = 1
-
-[node name="char3" type="AnimatedSprite2D" parent="."]
-visible = false
-z_index = -1
-texture_filter = 1
-position = Vector2(1074, 324.00003)
-scale = Vector2(0.533707, 0.533707)
-sprite_frames = SubResource("SpriteFrames_53jq0")
-animation = &"l_talk"
-autoplay = "l_talk"
+animation = &"d_talk"
+autoplay = "d_talk"
 script = ExtResource("5_q18ei")
 onward_value = 2
 
@@ -205,7 +271,8 @@ offset_bottom = 675.0
 grow_horizontal = 2
 theme = SubResource("Theme_s2ta7")
 bbcode_enabled = true
-text = "this is the second text"
+text = "[b]Deri![/b] You...
+Don't think you can run forever! Your unmistakable trail is easy to follow!"
 scroll_active = false
 horizontal_alignment = 1
 script = ExtResource("5_q18ei")
@@ -224,7 +291,8 @@ offset_bottom = 675.0
 grow_horizontal = 2
 theme = SubResource("Theme_s2ta7")
 bbcode_enabled = true
-text = "and i am sane and normal!"
+text = "Oops. That silly, silly hunter is on my tail again. I guess that's my clue to get out of here!
+... But at least there's unfinished business on the way."
 scroll_active = false
 horizontal_alignment = 1
 script = ExtResource("5_q18ei")
@@ -232,7 +300,6 @@ onward_value = 2
 
 [connection signal="onward" from="." to="RichTextLabel" method="_on_text_onward"]
 [connection signal="onward" from="." to="char1" method="_on_text_onward"]
-[connection signal="onward" from="." to="char2" method="_on_text_onward"]
-[connection signal="onward" from="." to="char3" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel2" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel3" method="_on_text_onward"]
+[connection signal="onward" from="." to="char2" method="_on_text_onward"]
