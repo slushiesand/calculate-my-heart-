@@ -259,10 +259,11 @@ answer = "(4y^3)/3+c"
 onward_value = 1
 
 [node name="equation4" parent="." instance=ExtResource("9_q4xlh")]
+visible = false
 position = Vector2(331, 233)
 equation = "27x^2"
 answer = "9x^3+c"
-onward_value = 1
+onward_value = 2
 
 [node name="equation3" parent="." instance=ExtResource("9_q4xlh")]
 visible = false
@@ -271,7 +272,7 @@ equation = "24z+7"
 answer = "24"
 derivative = true
 indeterminate = true
-onward_value = 2
+onward_value = 3
 
 [connection signal="timeout" from="Control/Timer" to="." method="_on_timer_timeout"]
 [connection signal="answered" from="equation" to="." method="_on_equation_answered"]
@@ -281,3 +282,4 @@ onward_value = 2
 [connection signal="answered" from="equation4" to="." method="_on_equation_answered"]
 [connection signal="new_equation" from="equation4" to="equation3" method="_on_new_equation"]
 [connection signal="answered" from="equation3" to="." method="_on_equation_answered"]
+[connection signal="new_equation" from="equation3" to="equation4" method="_on_new_equation"]

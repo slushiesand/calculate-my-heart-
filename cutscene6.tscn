@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbbteyoc5e8yy" path="res://text-player.gd" id="1_doqqs"]
 [ext_resource type="Texture2D" uid="uid://dle5sa27m4jkk" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 2/1.png" id="2_cpv71"]
-[ext_resource type="Texture2D" uid="uid://b200cfhk222cf" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 1/4.png" id="3_dppd0"]
+[ext_resource type="Texture2D" uid="uid://cf7nvc44m6y0e" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 2/6.png" id="3_doqqs"]
 [ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="4_phjvx"]
 [ext_resource type="Script" uid="uid://iibput3g1lr0" path="res://text_played.gd" id="5_uj2hw"]
 [ext_resource type="Texture2D" uid="uid://bj732md4hider" path="res://art/deri-portrait.png" id="6_xp4oi"]
@@ -93,11 +93,12 @@ animations = [{
 
 [node name="Node" type="Node"]
 script = ExtResource("1_doqqs")
-level = "uid://b5uspgfbbr3lk"
+level = "uid://c82tnm2630p05"
 max_onward = 11
 music = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.5178359, 0.3627492, 0.8285983, 1)
 z_index = -2
 texture_filter = 1
 position = Vector2(711, 398)
@@ -105,10 +106,11 @@ scale = Vector2(2.4691358, 2.4691358)
 texture = ExtResource("2_cpv71")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(1, 1, 1, 0.48235294)
 texture_filter = 1
-position = Vector2(-0.31500125, -61.155)
+position = Vector2(-26.325005, -69.255)
 scale = Vector2(1.0025, 1.0024999)
-texture = ExtResource("3_dppd0")
+texture = ExtResource("3_doqqs")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -169,6 +171,7 @@ script = ExtResource("5_uj2hw")
 onward_value = 2
 
 [node name="char4" type="AnimatedSprite2D" parent="."]
+visible = false
 z_index = -1
 texture_filter = 1
 position = Vector2(219, 323.78632)
@@ -192,6 +195,7 @@ script = ExtResource("5_uj2hw")
 onward_value = 4
 
 [node name="char6" type="AnimatedSprite2D" parent="."]
+visible = false
 z_index = -1
 texture_filter = 1
 position = Vector2(219, 323.78632)
@@ -242,6 +246,7 @@ script = ExtResource("5_uj2hw")
 onward_value = 8
 
 [node name="char10" type="AnimatedSprite2D" parent="."]
+visible = false
 z_index = -1
 texture_filter = 1
 position = Vector2(219, 323.78632)
@@ -285,7 +290,6 @@ offset_bottom = 721.0
 color = Color(0.7254902, 0.7254902, 0.7254902, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
 texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -500,6 +504,7 @@ script = ExtResource("5_uj2hw")
 onward_value = 10
 
 [node name="RichTextLabel12" type="RichTextLabel" parent="."]
+visible = false
 texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5

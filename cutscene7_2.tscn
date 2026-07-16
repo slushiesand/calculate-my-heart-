@@ -1,0 +1,595 @@
+[gd_scene load_steps=26 format=3 uid="uid://cb3a4ncljeulf"]
+
+[ext_resource type="Script" uid="uid://dbbteyoc5e8yy" path="res://text-player.gd" id="1_iuf35"]
+[ext_resource type="Texture2D" uid="uid://bi1nbgu14d6ad" path="res://art/craftpix-891123-free-pixel-art-street-2d-backgrounds/PNG/City3/Bright/sky.png" id="2_s7vu5"]
+[ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="3_biq1e"]
+[ext_resource type="Texture2D" uid="uid://bj732md4hider" path="res://art/deri-portrait.png" id="4_2mth1"]
+[ext_resource type="Texture2D" uid="uid://dptv6lut0ilc6" path="res://art/lim-portrait.png" id="5_xvq3i"]
+[ext_resource type="Texture2D" uid="uid://dd20urhvcmlpa" path="res://art/ral-portrait.png" id="6_1agal"]
+[ext_resource type="Script" uid="uid://iibput3g1lr0" path="res://text_played.gd" id="7_ekxqj"]
+
+[sub_resource type="Animation" id="Animation_7a8ye"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Many hours later..."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("char1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ayt76"]
+resource_name = "new_animation"
+length = 3.5000036
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.45, 1.5, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": ["", "Many hours later...", "Many hours later...", "", "You can't just abandon, Hunter Ral! I thought we were getting along! I thought we were helping each other! I..."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("char1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0a7ni"]
+_data = {
+&"RESET": SubResource("Animation_7a8ye"),
+&"new_animation": SubResource("Animation_ayt76")
+}
+
+[sub_resource type="Theme" id="Theme_s2ta7"]
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 7
+RichTextLabel/font_sizes/bold_font_size = 64
+RichTextLabel/font_sizes/normal_font_size = 48
+RichTextLabel/fonts/bold_font = ExtResource("3_biq1e")
+RichTextLabel/fonts/normal_font = ExtResource("3_biq1e")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p30sb"]
+atlas = ExtResource("4_2mth1")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53jq0"]
+atlas = ExtResource("4_2mth1")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv4tq"]
+atlas = ExtResource("5_xvq3i")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4ppm"]
+atlas = ExtResource("5_xvq3i")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q24f"]
+atlas = ExtResource("6_1agal")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ye5a"]
+atlas = ExtResource("6_1agal")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_53jq0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p30sb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53jq0")
+}],
+"loop": true,
+"name": &"d_talk",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mv4tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4ppm")
+}],
+"loop": true,
+"name": &"l_talk",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q24f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ye5a")
+}],
+"loop": true,
+"name": &"r_talk",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuf35"]
+atlas = ExtResource("4_2mth1")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7vu5"]
+atlas = ExtResource("4_2mth1")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_biq1e"]
+atlas = ExtResource("5_xvq3i")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mth1"]
+atlas = ExtResource("5_xvq3i")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvq3i"]
+atlas = ExtResource("6_1agal")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1agal"]
+atlas = ExtResource("6_1agal")
+region = Rect2(640, 0, 640, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ekxqj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuf35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7vu5")
+}],
+"loop": true,
+"name": &"d_talk",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_biq1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mth1")
+}],
+"loop": true,
+"name": &"l_talk",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvq3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1agal")
+}],
+"loop": true,
+"name": &"r_talk",
+"speed": 2.0
+}]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_iuf35")
+level = "uid://b5uspgfbbr3lk"
+max_onward = 14
+music = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+position = Vector2(641, 361)
+scale = Vector2(0.68179005, 0.68179005)
+texture = ExtResource("2_s7vu5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0a7ni")
+}
+autoplay = "new_animation"
+
+[node name="controls" type="RichTextLabel" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -641.0
+offset_top = 670.0
+offset_right = 641.0
+offset_bottom = 718.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+theme_override_colors/default_color = Color(0.41598046, 0.41598043, 0.4159804, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+bbcode_enabled = true
+text = "(click enter to continue)"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="char1" type="AnimatedSprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(219, 323.78632)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"d_talk"
+autoplay = "d_talk"
+script = ExtResource("7_ekxqj")
+
+[node name="char2" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(219, 323.78632)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"d_talk"
+autoplay = "d_talk"
+script = ExtResource("7_ekxqj")
+onward_value = 1
+
+[node name="char3" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(219, 323.78632)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"d_talk"
+autoplay = "d_talk"
+script = ExtResource("7_ekxqj")
+onward_value = 3
+
+[node name="char4" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(1074, 324.00003)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_ekxqj")
+animation = &"l_talk"
+autoplay = "l_talk"
+script = ExtResource("7_ekxqj")
+onward_value = 4
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -1.0
+offset_top = 494.0
+offset_right = 1281.0
+offset_bottom = 721.0
+color = Color(0.7254902, 0.7254902, 0.7254902, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "Many hours later..."
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("7_ekxqj")
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "... If my annoyance finally got you to abandon your duty for once, then... I guess I respect your decision.
+It's what I was trying to do, anyway."
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("7_ekxqj")
+onward_value = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "... No wait, my friend!
+Don't leave."
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("7_ekxqj")
+onward_value = 2
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "Ral? No. That isn't her voice.
+... [b]Lim?[/b] Is it [b]yours[/b]?"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("7_ekxqj")
+onward_value = 3
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "... It has been very, very long. 
+You have changed a lot since we last met."
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("7_ekxqj")
+onward_value = 4
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "I could... say the same to you, Limit. I've been looking for you for so long, even though I don't talk with the others anymore."
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("7_ekxqj")
+onward_value = 5
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "We have noticed, but since you seemed to be going on the righteous path, we have not interfered. However...
+Your mind is wavering from the body's steps, so we came to find you."
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("7_ekxqj")
+onward_value = 6
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "Eh? Are you alright? Who is \"we?\" And what do you mean I'm not on the \"righteous path?\" Even when we were friends, our methodologies weren't very similar. "
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("7_ekxqj")
+onward_value = 7
+
+[node name="RichTextLabel10" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "[b]MISS DERI... ![/b] You... need to get out of here... 
+Your friend... isn't your friend anymore."
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("7_ekxqj")
+onward_value = 8
+
+[node name="RichTextLabel11" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "Intrusive thoughts are threatening the bond between equation and solution. She is influencing you! She is not the guide you need!"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("7_ekxqj")
+onward_value = 9
+
+[node name="RichTextLabel12" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "You have been searching for the brain of the body this whole time - the source of clarity, the Limit? Well, here the body and self stand.
+Differentiation is a useful tool for convergence, but you've used it wrong."
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("7_ekxqj")
+onward_value = 10
+
+[node name="RichTextLabel13" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "Who let you decide what is \"right\" and \"wrong?\" 
+Calculus is the study of change! There are countless graphs to create when differentiating and integrating! Don't get ahead of yourself!"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("7_ekxqj")
+onward_value = 11
+
+[node name="RichTextLabel14" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "You are straying from the graph again... !
+If you join us, you can be as infinitely high or flat! No expectations, just as you liked! But you're acting like a mere dot on the plane."
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("7_ekxqj")
+onward_value = 12
+
+[node name="RichTextLabel15" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "What if I'm just fine where I am and what I've done?
+Do those people in the alleys look happy to you?
+What if... I used the differentiation to solve your indeterminate wrath?"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("7_ekxqj")
+onward_value = 13
+
+[node name="RichTextLabel16" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "Very well.
+But remember, intrusive thought. A dot on a plane is infinitely small.
+Even an infinite function never touches the Limit."
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("7_ekxqj")
+onward_value = 14
+
+[connection signal="onward" from="." to="char1" method="_on_text_onward"]
+[connection signal="onward" from="." to="char2" method="_on_text_onward"]
+[connection signal="onward" from="." to="char3" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel3" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel4" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel5" method="_on_text_onward"]
