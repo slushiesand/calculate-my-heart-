@@ -190,7 +190,7 @@ outline_color = Color(0, 0, 0, 1)
 [node name="Node" type="Node"]
 script = ExtResource("1_87x5k")
 toSolve = 3
-level = "uid://qjyoy3wl4uwt"
+level = "uid://da03c4ga350jj"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -202,7 +202,7 @@ position = Vector2(168, 141)
 
 [node name="ral" parent="." instance=ExtResource("5_yfwe1")]
 position = Vector2(494, 615)
-text = "What's the \"+c\" stand for? It's a stand-in for a constant that would be taken away if you differentiated the function."
+text = "What's the \"+c\" stand for? It's a stand-in for a constant that would turn to zero if you differentiated the function."
 
 [node name="background" type="Sprite2D" parent="."]
 z_index = -1
