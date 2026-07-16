@@ -1,13 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://b8xntcpq532hr"]
+[gd_scene load_steps=20 format=3 uid="uid://c38rd7apj46hn"]
 
-[ext_resource type="Script" uid="uid://dbbteyoc5e8yy" path="res://text-player.gd" id="1_3rdmq"]
-[ext_resource type="Texture2D" uid="uid://dle5sa27m4jkk" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 2/1.png" id="2_fawj6"]
-[ext_resource type="Texture2D" uid="uid://b200cfhk222cf" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 1/4.png" id="3_b2qww"]
-[ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="4_pfibf"]
-[ext_resource type="Script" uid="uid://iibput3g1lr0" path="res://text_played.gd" id="5_f3y5k"]
-[ext_resource type="Texture2D" uid="uid://bj732md4hider" path="res://art/deri-portrait.png" id="6_5to1q"]
-[ext_resource type="Texture2D" uid="uid://dptv6lut0ilc6" path="res://art/lim-portrait.png" id="7_vng66"]
-[ext_resource type="Texture2D" uid="uid://dd20urhvcmlpa" path="res://art/ral-portrait.png" id="8_en4ao"]
+[ext_resource type="Script" uid="uid://dbbteyoc5e8yy" path="res://text-player.gd" id="1_h408h"]
+[ext_resource type="Texture2D" uid="uid://dle5sa27m4jkk" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 2/1.png" id="2_cl6jm"]
+[ext_resource type="Texture2D" uid="uid://bjc5ckfto2uwl" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 1/3.png" id="3_h408h"]
+[ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="4_ovlil"]
+[ext_resource type="Script" uid="uid://iibput3g1lr0" path="res://text_played.gd" id="5_n76pn"]
+[ext_resource type="Texture2D" uid="uid://bj732md4hider" path="res://art/deri-portrait.png" id="6_ojfec"]
+[ext_resource type="Texture2D" uid="uid://dptv6lut0ilc6" path="res://art/lim-portrait.png" id="7_fk6df"]
+[ext_resource type="Texture2D" uid="uid://dd20urhvcmlpa" path="res://art/ral-portrait.png" id="8_l5w7a"]
 
 [sub_resource type="Animation" id="Animation_7a8ye"]
 length = 0.001
@@ -21,53 +21,15 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Damn, why are there so many potholes on this side of the city? 
-I'm seriously going to get caught by--"]
+"values": ["Some time later, at a local cafe..."]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RichTextLabel:visible")
+tracks/1/path = NodePath("char2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("char1:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("RichTextLabel2:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["[b]VAMPIRIC OPERATION, MISS DERI-VATIVE![/b]
-In the name of Newton, you shall get your justified punishment!"]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("char2:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -76,7 +38,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_ayt76"]
 resource_name = "new_animation"
-length = 10.000004
+length = 2.5000036
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -84,58 +46,19 @@ tracks/0/path = NodePath("RichTextLabel:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1, 1.4333333, 1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": ["", "Damn, why are there so many potholes on this side of the city? 
-At this rate, I'm seriously going to get caught by--"]
+"values": ["", "Some time later, at a local cafe...", "Some time later, at a local cafe...", "", "... What are you doing here?"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RichTextLabel:visible")
+tracks/1/path = NodePath("char2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 3.2666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("char1:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 3.2666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("RichTextLabel2:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(3.2666667, 4.0666666, 5.2666664),
-"transitions": PackedFloat32Array(0.4204482, 1, 1),
-"update": 0,
-"values": ["", "[b]VAMPIRIC OPERATION, MISS DERI-VATIVE![/b]
-", "[b]VAMPIRIC OPERATION, MISS DERI-VATIVE![/b]
-In the name of Newton, you shall get your justified punishment!"]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("char2:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 3.27),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -153,31 +76,31 @@ RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
 RichTextLabel/constants/outline_size = 7
 RichTextLabel/font_sizes/bold_font_size = 64
 RichTextLabel/font_sizes/normal_font_size = 48
-RichTextLabel/fonts/bold_font = ExtResource("4_pfibf")
-RichTextLabel/fonts/normal_font = ExtResource("4_pfibf")
+RichTextLabel/fonts/bold_font = ExtResource("4_ovlil")
+RichTextLabel/fonts/normal_font = ExtResource("4_ovlil")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p30sb"]
-atlas = ExtResource("6_5to1q")
+atlas = ExtResource("6_ojfec")
 region = Rect2(0, 0, 640, 640)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_53jq0"]
-atlas = ExtResource("6_5to1q")
+atlas = ExtResource("6_ojfec")
 region = Rect2(640, 0, 640, 640)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mv4tq"]
-atlas = ExtResource("7_vng66")
+atlas = ExtResource("7_fk6df")
 region = Rect2(0, 0, 640, 640)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q4ppm"]
-atlas = ExtResource("7_vng66")
+atlas = ExtResource("7_fk6df")
 region = Rect2(640, 0, 640, 640)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3q24f"]
-atlas = ExtResource("8_en4ao")
+atlas = ExtResource("8_l5w7a")
 region = Rect2(0, 0, 640, 640)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ye5a"]
-atlas = ExtResource("8_en4ao")
+atlas = ExtResource("8_l5w7a")
 region = Rect2(640, 0, 640, 640)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_53jq0"]
@@ -217,47 +140,28 @@ animations = [{
 }]
 
 [node name="Node" type="Node"]
-script = ExtResource("1_3rdmq")
-level = "uid://c38rd7apj46hn"
+script = ExtResource("1_h408h")
+level = "uid://ninbbcm7qq1d"
 max_onward = 7
-music = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -2
 texture_filter = 1
 position = Vector2(711, 398)
 scale = Vector2(2.4691358, 2.4691358)
-texture = ExtResource("2_fawj6")
+texture = ExtResource("2_cl6jm")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
 texture_filter = 1
-position = Vector2(-0.31500125, -61.155)
+position = Vector2(-23.490004, -51.840004)
 scale = Vector2(1.0025, 1.0024999)
-texture = ExtResource("3_b2qww")
+texture = ExtResource("3_h408h")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_0a7ni")
 }
 autoplay = "new_animation"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-texture_filter = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -575.0
-offset_top = 518.0
-offset_right = 564.0
-offset_bottom = 675.0
-grow_horizontal = 2
-theme = SubResource("Theme_s2ta7")
-bbcode_enabled = true
-text = "Damn, why are there so many potholes on this side of the city? 
-I'm seriously going to get caught by--"
-scroll_active = false
-horizontal_alignment = 1
-script = ExtResource("5_f3y5k")
 
 [node name="controls" type="RichTextLabel" parent="."]
 texture_filter = 1
@@ -277,16 +181,6 @@ text = "(click enter to continue)"
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="char1" type="AnimatedSprite2D" parent="."]
-z_index = -1
-texture_filter = 1
-position = Vector2(219, 323.78632)
-scale = Vector2(0.533707, 0.533707)
-sprite_frames = SubResource("SpriteFrames_53jq0")
-animation = &"d_talk"
-autoplay = "d_talk"
-script = ExtResource("5_f3y5k")
-
 [node name="char2" type="AnimatedSprite2D" parent="."]
 z_index = -1
 texture_filter = 1
@@ -295,19 +189,31 @@ scale = Vector2(0.533707, 0.533707)
 sprite_frames = SubResource("SpriteFrames_53jq0")
 animation = &"r_talk"
 autoplay = "r_talk"
-script = ExtResource("5_f3y5k")
+script = ExtResource("5_n76pn")
 
-[node name="char3" type="AnimatedSprite2D" parent="."]
+[node name="char1" type="AnimatedSprite2D" parent="."]
 visible = false
 z_index = -1
 texture_filter = 1
 position = Vector2(219, 323.78632)
 scale = Vector2(0.533707, 0.533707)
 sprite_frames = SubResource("SpriteFrames_53jq0")
-animation = &"d_talk"
+animation = &"r_talk"
 autoplay = "d_talk"
-script = ExtResource("5_f3y5k")
+script = ExtResource("5_n76pn")
 onward_value = 1
+
+[node name="char3" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(1074, 324.00003)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"r_talk"
+autoplay = "r_talk"
+script = ExtResource("5_n76pn")
+onward_value = 2
 
 [node name="char4" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -318,8 +224,8 @@ scale = Vector2(0.533707, 0.533707)
 sprite_frames = SubResource("SpriteFrames_53jq0")
 animation = &"r_talk"
 autoplay = "r_talk"
-script = ExtResource("5_f3y5k")
-onward_value = 2
+script = ExtResource("5_n76pn")
+onward_value = 3
 
 [node name="char5" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -328,82 +234,46 @@ texture_filter = 1
 position = Vector2(219, 323.78632)
 scale = Vector2(0.533707, 0.533707)
 sprite_frames = SubResource("SpriteFrames_53jq0")
-animation = &"d_talk"
+animation = &"r_talk"
 autoplay = "d_talk"
-script = ExtResource("5_f3y5k")
-onward_value = 3
+script = ExtResource("5_n76pn")
+onward_value = 4
 
 [node name="char6" type="AnimatedSprite2D" parent="."]
 visible = false
 z_index = -1
 texture_filter = 1
-position = Vector2(1074, 324)
+position = Vector2(1074, 324.00003)
 scale = Vector2(0.533707, 0.533707)
 sprite_frames = SubResource("SpriteFrames_53jq0")
 animation = &"r_talk"
 autoplay = "r_talk"
-script = ExtResource("5_f3y5k")
-onward_value = 4
+script = ExtResource("5_n76pn")
+onward_value = 5
 
 [node name="char7" type="AnimatedSprite2D" parent="."]
 visible = false
 z_index = -1
 texture_filter = 1
-position = Vector2(219, 323.78632)
+position = Vector2(1074, 324.00003)
 scale = Vector2(0.533707, 0.533707)
 sprite_frames = SubResource("SpriteFrames_53jq0")
-animation = &"d_talk"
-autoplay = "d_talk"
-script = ExtResource("5_f3y5k")
-onward_value = 5
+animation = &"r_talk"
+autoplay = "r_talk"
+script = ExtResource("5_n76pn")
+onward_value = 6
 
 [node name="char8" type="AnimatedSprite2D" parent="."]
 visible = false
 z_index = -1
 texture_filter = 1
-position = Vector2(1074, 324)
+position = Vector2(1074, 324.00003)
 scale = Vector2(0.533707, 0.533707)
 sprite_frames = SubResource("SpriteFrames_53jq0")
-animation = &"d_talk"
+animation = &"r_talk"
 autoplay = "r_talk"
-script = ExtResource("5_f3y5k")
-onward_value = 6
-
-[node name="char9" type="AnimatedSprite2D" parent="."]
-visible = false
-z_index = -1
-texture_filter = 1
-position = Vector2(219, 323.78632)
-scale = Vector2(0.533707, 0.533707)
-sprite_frames = SubResource("SpriteFrames_53jq0")
-animation = &"d_talk"
-autoplay = "d_talk"
-script = ExtResource("5_f3y5k")
+script = ExtResource("5_n76pn")
 onward_value = 7
-
-[node name="char10" type="AnimatedSprite2D" parent="."]
-visible = false
-z_index = -1
-texture_filter = 1
-position = Vector2(1074, 324)
-scale = Vector2(0.533707, 0.533707)
-sprite_frames = SubResource("SpriteFrames_53jq0")
-animation = &"d_talk"
-autoplay = "r_talk"
-script = ExtResource("5_f3y5k")
-onward_value = 8
-
-[node name="char11" type="AnimatedSprite2D" parent="."]
-visible = false
-z_index = -1
-texture_filter = 1
-position = Vector2(219, 323.78632)
-scale = Vector2(0.533707, 0.533707)
-sprite_frames = SubResource("SpriteFrames_53jq0")
-animation = &"d_talk"
-autoplay = "d_talk"
-script = ExtResource("5_f3y5k")
-onward_value = 9
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
@@ -413,7 +283,7 @@ offset_right = 1281.0
 offset_bottom = 721.0
 color = Color(0.7254902, 0.7254902, 0.7254902, 1)
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
 texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -425,11 +295,30 @@ offset_bottom = 675.0
 grow_horizontal = 2
 theme = SubResource("Theme_s2ta7")
 bbcode_enabled = true
-text = "[b]VAMPIRIC OPERATION, MISS DERI-VATIVE![/b]
-In the name of Newton, you shall get your justified punishment!"
+text = "Some time later, at a local cafe..."
 scroll_active = false
 horizontal_alignment = 1
-script = ExtResource("5_f3y5k")
+script = ExtResource("5_n76pn")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -575.0
+offset_top = 518.0
+offset_right = 564.0
+offset_bottom = 675.0
+grow_horizontal = 2
+theme = SubResource("Theme_s2ta7")
+bbcode_enabled = true
+text = "Why, drinking tomato juice, of course!
+I'm fairly certain I have a right to nutrition, no matter my crimes."
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("5_n76pn")
+onward_value = 1
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
 visible = false
@@ -444,12 +333,12 @@ offset_bottom = 675.0
 grow_horizontal = 2
 theme = SubResource("Theme_s2ta7")
 bbcode_enabled = true
-text = "Aah... Hunter Integral! Why might that be?
-Not my services for the public, surely?"
+text = "Look- I...
+I will not concede on my previous points. You are still a selfish criminal. I am an enactor of justice."
 scroll_active = false
 horizontal_alignment = 1
-script = ExtResource("5_f3y5k")
-onward_value = 1
+script = ExtResource("5_n76pn")
+onward_value = 2
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
 visible = false
@@ -464,12 +353,13 @@ offset_bottom = 675.0
 grow_horizontal = 2
 theme = SubResource("Theme_s2ta7")
 bbcode_enabled = true
-text = "That is a [b]deceitful[/b] description of what you do.
-You are no hero: You know well that differentiation can erase people's ambitions - their bodies, their selves - yet you still continue."
+text = "Thus, there must be things done to amend your ways.
+... I will give you an offer. Community service under strict supervision.
+It's not like your crimes are a point of contention anyway, so we can skip trial."
 scroll_active = false
 horizontal_alignment = 1
-script = ExtResource("5_f3y5k")
-onward_value = 2
+script = ExtResource("5_n76pn")
+onward_value = 3
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="."]
 visible = false
@@ -484,12 +374,12 @@ offset_bottom = 675.0
 grow_horizontal = 2
 theme = SubResource("Theme_s2ta7")
 bbcode_enabled = true
-text = "Hm... but have you considered that some people want that? Not to disappear, but to be unburdened?
-Not to mention I've never gone far enough to \"erase\" a function!"
+text = "Hm, that doesn't really sound legal. But I've never paid attention to the law, so how would I know?
+I suppose it beats being in a prision cell! What am I to do, Inty?"
 scroll_active = false
 horizontal_alignment = 1
-script = ExtResource("5_f3y5k")
-onward_value = 3
+script = ExtResource("5_n76pn")
+onward_value = 4
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="."]
 visible = false
@@ -504,11 +394,12 @@ offset_bottom = 675.0
 grow_horizontal = 2
 theme = SubResource("Theme_s2ta7")
 bbcode_enabled = true
-text = "I have never seen you ask permission [b]once[/b] to enact your solving. What makes you think you have the sole right to decide how people live?"
+text = "... Don't call me that.
+... Anyway, help me clean up your messes with [b]integration[/b]. It's a similar methodology to differentiation, so it shouldn't be too difficult."
 scroll_active = false
 horizontal_alignment = 1
-script = ExtResource("5_f3y5k")
-onward_value = 4
+script = ExtResource("5_n76pn")
+onward_value = 5
 
 [node name="RichTextLabel7" type="RichTextLabel" parent="."]
 visible = false
@@ -523,12 +414,11 @@ offset_bottom = 675.0
 grow_horizontal = 2
 theme = SubResource("Theme_s2ta7")
 bbcode_enabled = true
-text = "What makes you think [b]you[/b] do? Do you even decide your own life, Ral?
-... Is this what you wanted to do when you were younger? Hunting petty criminals across the city, ignoring the real problems underneath our feet?"
+text = "I have documents of every single person you've differentiated, so our task is to find those people and see if they want to return to their former selves."
 scroll_active = false
 horizontal_alignment = 1
-script = ExtResource("5_f3y5k")
-onward_value = 5
+script = ExtResource("5_n76pn")
+onward_value = 6
 
 [node name="RichTextLabel8" type="RichTextLabel" parent="."]
 visible = false
@@ -543,32 +433,11 @@ offset_bottom = 675.0
 grow_horizontal = 2
 theme = SubResource("Theme_s2ta7")
 bbcode_enabled = true
-text = "...
-I wanted to save people. 
-That's all."
+text = "You can go try it on those functions over there. Just make sure they know what you're doing before you do it.
+If they disagree... uh, you can revert them back."
 scroll_active = false
 horizontal_alignment = 1
-script = ExtResource("5_f3y5k")
-onward_value = 6
-
-[node name="RichTextLabel9" type="RichTextLabel" parent="."]
-visible = false
-texture_filter = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -575.0
-offset_top = 518.0
-offset_right = 564.0
-offset_bottom = 675.0
-grow_horizontal = 2
-theme = SubResource("Theme_s2ta7")
-bbcode_enabled = true
-text = "Then...
-Maybe we're on the same page, after all."
-scroll_active = false
-horizontal_alignment = 1
-script = ExtResource("5_f3y5k")
+script = ExtResource("5_n76pn")
 onward_value = 7
 
 [connection signal="onward" from="." to="RichTextLabel" method="_on_text_onward"]
@@ -576,18 +445,14 @@ onward_value = 7
 [connection signal="onward" from="." to="char2" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel2" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel3" method="_on_text_onward"]
-[connection signal="onward" from="." to="char3" method="_on_text_onward"]
-[connection signal="onward" from="." to="char4" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel4" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel5" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel6" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel7" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel8" method="_on_text_onward"]
-[connection signal="onward" from="." to="RichTextLabel9" method="_on_text_onward"]
+[connection signal="onward" from="." to="char3" method="_on_text_onward"]
+[connection signal="onward" from="." to="char4" method="_on_text_onward"]
 [connection signal="onward" from="." to="char5" method="_on_text_onward"]
 [connection signal="onward" from="." to="char6" method="_on_text_onward"]
 [connection signal="onward" from="." to="char7" method="_on_text_onward"]
 [connection signal="onward" from="." to="char8" method="_on_text_onward"]
-[connection signal="onward" from="." to="char9" method="_on_text_onward"]
-[connection signal="onward" from="." to="char10" method="_on_text_onward"]
-[connection signal="onward" from="." to="char11" method="_on_text_onward"]

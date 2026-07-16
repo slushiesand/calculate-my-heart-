@@ -27,4 +27,4 @@ func _on_equation_answered() -> void:
 
 
 func _on_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://debug.tscn")
+	get_tree().change_scene_to_file( get_scene_file_path() )
