@@ -302,7 +302,7 @@ grow_horizontal = 2
 theme = SubResource("Theme_s2ta7")
 bbcode_enabled = true
 text = "... What was up with that last guy? He looked a little... strange.
-I fixed him, but... should we bring them to L' Hopital?"
+I fixed him, but... should we bring them to L' Ho(s)pital?"
 scroll_active = false
 horizontal_alignment = 1
 script = ExtResource("5_uj2hw")
@@ -523,10 +523,19 @@ horizontal_alignment = 1
 script = ExtResource("5_uj2hw")
 onward_value = 11
 
-[connection signal="onward" from="." to="RichTextLabel" method="_on_text_onward"]
 [connection signal="onward" from="." to="char1" method="_on_text_onward"]
 [connection signal="onward" from="." to="char2" method="_on_text_onward"]
+[connection signal="onward" from="." to="char3" method="_on_text_onward"]
+[connection signal="onward" from="." to="char4" method="_on_text_onward"]
+[connection signal="onward" from="." to="char5" method="_on_text_onward"]
+[connection signal="onward" from="." to="char6" method="_on_text_onward"]
 [connection signal="onward" from="." to="char7" method="_on_text_onward"]
+[connection signal="onward" from="." to="char8" method="_on_text_onward"]
+[connection signal="onward" from="." to="char9" method="_on_text_onward"]
+[connection signal="onward" from="." to="char10" method="_on_text_onward"]
+[connection signal="onward" from="." to="char11" method="_on_text_onward"]
+[connection signal="onward" from="." to="char12" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel2" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel3" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel4" method="_on_text_onward"]
@@ -534,16 +543,7 @@ onward_value = 11
 [connection signal="onward" from="." to="RichTextLabel6" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel7" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel8" method="_on_text_onward"]
-[connection signal="onward" from="." to="char3" method="_on_text_onward"]
-[connection signal="onward" from="." to="char4" method="_on_text_onward"]
-[connection signal="onward" from="." to="char5" method="_on_text_onward"]
-[connection signal="onward" from="." to="char6" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel9" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel10" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel11" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel12" method="_on_text_onward"]
-[connection signal="onward" from="." to="char8" method="_on_text_onward"]
-[connection signal="onward" from="." to="char9" method="_on_text_onward"]
-[connection signal="onward" from="." to="char10" method="_on_text_onward"]
-[connection signal="onward" from="." to="char11" method="_on_text_onward"]
-[connection signal="onward" from="." to="char12" method="_on_text_onward"]

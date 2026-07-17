@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://dxspdofxrravn"]
+[gd_scene load_steps=18 format=3 uid="uid://dxspdofxrravn"]
 
 [ext_resource type="Script" uid="uid://cef4mtpddvl0d" path="res://equation.gd" id="1_xfrnx"]
 [ext_resource type="Texture2D" uid="uid://bjnu2bqh28yb8" path="res://art/npc.png" id="2_0wq3e"]
 [ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="3_0wq3e"]
 [ext_resource type="AudioStream" uid="uid://c6nk6vec2vm8s" path="res://sounds/zapsplat_multimedia_gameshow_correct_answer_ping_ring_chime_006_92779.mp3" id="4_0rrsf"]
 [ext_resource type="AudioStream" uid="uid://bwx2btur2xt7y" path="res://sounds/zapsplat_multimedia_ui_tone_short_thin_clicky_error_incorrect_001_92785.mp3" id="5_ven3s"]
+[ext_resource type="AudioStream" uid="uid://cvywlk2djxhaf" path="res://sounds/zapsplat_multimedia_game_sound_arcade_explosion_bomb_x3_114956.mp3" id="6_5pc8e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbn5y"]
 size = Vector2(372.68292, 153.38455)
@@ -39,6 +40,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("defeatSFX/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_0rrsf"]
@@ -77,24 +90,6 @@ tracks/0/keys = {
 "values": [Vector2i(0, 2), Vector2i(0, 2), Vector2i(1, 2)]
 }
 
-[sub_resource type="Animation" id="Animation_ven3s"]
-resource_name = "integral"
-length = 0.80002004
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2i(0, 0), Vector2i(1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_jedwf"]
 resource_name = "indeterminate"
 length = 0.8
@@ -113,13 +108,48 @@ tracks/0/keys = {
 "values": [Vector2i(0, 3), Vector2i(1, 3)]
 }
 
+[sub_resource type="Animation" id="Animation_ven3s"]
+resource_name = "integral"
+length = 0.80002004
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6jioe"]
+resource_name = "white"
+length = 2.0000033
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("defeatSFX/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.0000033),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jedwf"]
 _data = {
 &"RESET": SubResource("Animation_5pc8e"),
 &"derivative": SubResource("Animation_0rrsf"),
 &"idle": SubResource("Animation_0wq3e"),
 &"indeterminate": SubResource("Animation_jedwf"),
-&"integral": SubResource("Animation_ven3s")
+&"integral": SubResource("Animation_ven3s"),
+&"white": SubResource("Animation_6jioe")
 }
 
 [node name="equation" type="Node2D"]
@@ -231,6 +261,17 @@ volume_db = -2.0
 [node name="incorrectSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ven3s")
 volume_db = 5.0
+
+[node name="defeatSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5pc8e")
+
+[node name="ColorRect" type="ColorRect" parent="defeatSFX"]
+offset_left = -1417.0001
+offset_top = -1192.0
+offset_right = -1377.0001
+offset_bottom = -1152.0
+scale = Vector2(71.89225, 69.22474)
+color = Color(1, 1, 1, 0)
 
 [connection signal="new_equation" from="." to="." method="_on_new_equation"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

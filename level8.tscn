@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dsn2la1beyj23"]
+[gd_scene load_steps=18 format=4 uid="uid://dsn2la1beyj23"]
 
 [ext_resource type="Script" uid="uid://cu8srh1p6q4lw" path="res://level.gd" id="1_psl30"]
 [ext_resource type="Texture2D" uid="uid://xtip1nmw6wsk" path="res://art/craftpix-891123-free-pixel-art-street-2d-backgrounds/PNG/City1/Bright/road&border-TileSet.png" id="3_dkjrs"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="7_bjcmt"]
 [ext_resource type="Texture2D" uid="uid://3y024r8fspyf" path="res://art/lim.png" id="8_psl30"]
 [ext_resource type="PackedScene" uid="uid://dxspdofxrravn" path="res://equation.tscn" id="8_v1sto"]
+[ext_resource type="AudioStream" uid="uid://d38wqn5m1rh0c" path="res://sounds/zapsplat_multimedia_game_tone_childrens_game_toy_piano_fail_lose_musical_riff_tone_92895.mp3" id="10_dkjrs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jwave"]
 texture = ExtResource("3_dkjrs")
@@ -89,8 +90,8 @@ animations = [{
 
 [node name="Node" type="Node"]
 script = ExtResource("1_psl30")
-toSolve = 3
-level = "uid://qjyoy3wl4uwt"
+toSolve = 6
+level = "uid://l2l6g503dw8j"
 timed = true
 music = 4
 
@@ -127,7 +128,7 @@ offset_bottom = 243.0
 script = ExtResource("6_6qolp")
 
 [node name="Timer" type="Timer" parent="Control"]
-wait_time = 60.0
+wait_time = 90.0
 one_shot = true
 
 [node name="visibleTimer" type="Label" parent="Control"]
@@ -150,27 +151,56 @@ autoplay = "default"
 frame_progress = 0.86213183
 
 [node name="equation" parent="." instance=ExtResource("8_v1sto")]
-position = Vector2(997, 603)
-equation = "6x^2"
-answer = "12x"
+position = Vector2(981, 616)
+equation = "5x^13+12"
+answer = "65x^12"
 derivative = true
 indeterminate = true
 
 [node name="equation2" parent="." instance=ExtResource("8_v1sto")]
 visible = false
-position = Vector2(264, 368)
-equation = "6x^2"
-answer = "12x"
+position = Vector2(133, 467)
+equation = "6022 (use y!)"
+answer = "6022y+c"
 indeterminate = true
 onward_value = 1
 
 [node name="equation3" parent="." instance=ExtResource("8_v1sto")]
 visible = false
-position = Vector2(976, 224)
-equation = "6x^2"
-answer = "12x"
+position = Vector2(1143, 230)
+equation = "19z^2"
+answer = "38z"
+derivative = true
 indeterminate = true
 onward_value = 2
+
+[node name="equation4" parent="." instance=ExtResource("8_v1sto")]
+visible = false
+position = Vector2(526, 614)
+equation = "6y^3"
+answer = "(6y^4)/4+c"
+indeterminate = true
+onward_value = 3
+
+[node name="equation5" parent="." instance=ExtResource("8_v1sto")]
+visible = false
+position = Vector2(133, 229)
+equation = "(39z^9)/9"
+answer = "39z"
+derivative = true
+indeterminate = true
+onward_value = 4
+
+[node name="equation6" parent="." instance=ExtResource("8_v1sto")]
+visible = false
+position = Vector2(655, 358)
+equation = "314x"
+answer = "157x^2+c"
+indeterminate = true
+onward_value = 5
+
+[node name="timeupSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_dkjrs")
 
 [connection signal="timeout" from="Control/Timer" to="." method="_on_timer_timeout"]
 [connection signal="answered" from="equation" to="." method="_on_equation_answered"]
@@ -178,3 +208,10 @@ onward_value = 2
 [connection signal="answered" from="equation2" to="." method="_on_equation_answered"]
 [connection signal="new_equation" from="equation2" to="equation3" method="_on_new_equation"]
 [connection signal="answered" from="equation3" to="." method="_on_equation_answered"]
+[connection signal="new_equation" from="equation3" to="equation4" method="_on_new_equation"]
+[connection signal="answered" from="equation4" to="." method="_on_equation_answered"]
+[connection signal="answered" from="equation4" to="equation5" method="_on_equation_answered"]
+[connection signal="new_equation" from="equation4" to="equation5" method="_on_new_equation"]
+[connection signal="answered" from="equation5" to="." method="_on_equation_answered"]
+[connection signal="new_equation" from="equation5" to="equation6" method="_on_new_equation"]
+[connection signal="answered" from="equation6" to="." method="_on_equation_answered"]

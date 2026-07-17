@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://d1rbl8drbw1n5"]
+[gd_scene load_steps=14 format=4 uid="uid://d1rbl8drbw1n5"]
 
 [ext_resource type="Script" uid="uid://cu8srh1p6q4lw" path="res://level.gd" id="1_rqrji"]
 [ext_resource type="Texture2D" uid="uid://d4f6np5c6oh5x" path="res://icon.svg" id="2_8x87a"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dgd0p17bghf0h" path="res://art/craftpix-891123-free-pixel-art-street-2d-backgrounds/PNG/City1/Pale/road&border.png" id="6_7oc4e"]
 [ext_resource type="FontFile" uid="uid://dgms1as8owft1" path="res://fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="7_siwpi"]
 [ext_resource type="PackedScene" uid="uid://dxspdofxrravn" path="res://equation.tscn" id="8_0m7xm"]
+[ext_resource type="AudioStream" uid="uid://d38wqn5m1rh0c" path="res://sounds/zapsplat_multimedia_game_tone_childrens_game_toy_piano_fail_lose_musical_riff_tone_92895.mp3" id="9_8x87a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j2q8x"]
 texture = ExtResource("2_8x87a")
@@ -260,6 +261,9 @@ equation = "6z^7"
 answer = "42z^6"
 derivative = true
 onward_value = 2
+
+[node name="timeupSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_8x87a")
 
 [connection signal="timeout" from="Control/Timer" to="." method="_on_timer_timeout"]
 [connection signal="answered" from="equation" to="." method="_on_equation_answered"]

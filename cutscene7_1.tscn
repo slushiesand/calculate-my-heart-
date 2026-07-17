@@ -92,8 +92,9 @@ animations = [{
 
 [node name="Node" type="Node"]
 script = ExtResource("1_tao41")
-level = "uid://b5uspgfbbr3lk"
+level = "uid://cb3a4ncljeulf"
 max_onward = 4
+music = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -2
@@ -276,12 +277,12 @@ horizontal_alignment = 1
 script = ExtResource("7_d2d54")
 onward_value = 4
 
-[connection signal="onward" from="." to="RichTextLabel" method="_on_text_onward"]
 [connection signal="onward" from="." to="char1" method="_on_text_onward"]
+[connection signal="onward" from="." to="char2" method="_on_text_onward"]
+[connection signal="onward" from="." to="char3" method="_on_text_onward"]
+[connection signal="onward" from="." to="char4" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel2" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel3" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel4" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel5" method="_on_text_onward"]
-[connection signal="onward" from="." to="char2" method="_on_text_onward"]
-[connection signal="onward" from="." to="char3" method="_on_text_onward"]
-[connection signal="onward" from="." to="char4" method="_on_text_onward"]

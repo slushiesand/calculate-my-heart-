@@ -1,0 +1,702 @@
+[gd_scene load_steps=17 format=3 uid="uid://l2l6g503dw8j"]
+
+[ext_resource type="Texture2D" uid="uid://lg4f3dcmuun6" path="res://art/craftpix-net-322807-free-city-backgrounds-pixel-art/city 4/8.png" id="1_dmh3q"]
+[ext_resource type="Script" uid="uid://dbbteyoc5e8yy" path="res://text-player.gd" id="1_sy8ce"]
+[ext_resource type="Texture2D" uid="uid://dgd0p17bghf0h" path="res://art/craftpix-891123-free-pixel-art-street-2d-backgrounds/PNG/City1/Pale/road&border.png" id="2_iggq8"]
+[ext_resource type="Texture2D" uid="uid://bdedjmi78viw" path="res://art/deri.png" id="3_k7rdy"]
+[ext_resource type="Texture2D" uid="uid://kxt88p7scnuu" path="res://art/ral.png" id="4_sy8ce"]
+[ext_resource type="Theme" uid="uid://csalyp5076wag" path="res://rich-text.tres" id="5_uvbhr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7rhh"]
+atlas = ExtResource("3_k7rdy")
+region = Rect2(0, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2dv3"]
+atlas = ExtResource("3_k7rdy")
+region = Rect2(32, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t84q"]
+atlas = ExtResource("3_k7rdy")
+region = Rect2(64, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2d7o"]
+atlas = ExtResource("4_sy8ce")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujx65"]
+atlas = ExtResource("4_sy8ce")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3740v"]
+atlas = ExtResource("4_sy8ce")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dmh3q"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_m7rhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2dv3")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_0t84q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2dv3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_a2d7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujx65")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_3740v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujx65")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_k7rdy"]
+resource_name = "new_animation"
+length = 31.000006
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 4, 6.0333333, 8.033334, 9, 10, 11.033334, 11.966666, 12.933333, 17, 19, 20, 25, 27, 28, 28.933332, 30, 31),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": ["", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital!
+>... Sigh.
+
+", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital!
+>... Sigh.
+
+", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital!
+>... Sigh.
+
+> Huh? I...", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital!
+>... Sigh.
+
+> Huh? I...", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital!
+>... Sigh.
+
+> Huh? I...
+> Are you sure? I mean...", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital!
+>... Sigh.
+
+> Huh? I...
+> Are you sure? I mean...", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital!
+>... Sigh.
+
+> Huh? I...
+> Are you sure? I mean...
+> We were school friends, you know. Was there something I could have said, when we were more malleable? 
+> When they hadn't lost their mind?", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital!
+>... Sigh.
+
+> Huh? I...
+> Are you sure? I mean...
+> We were school friends, you know. Was there something I could have said, when we were more malleable? 
+> When they hadn't lost their mind?", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital!
+>... Sigh.
+
+> Huh? I...
+> Are you sure? I mean...
+> We were school friends, you know. Was there something I could have said, when we were more malleable? 
+> When they hadn't lost their mind?
+
+
+> ... Maybe not.", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital!
+>... Sigh.
+
+> Huh? I...
+> Are you sure? I mean...
+> We were school friends, you know. Was there something I could have said, when we were more malleable? 
+> When they hadn't lost their mind?
+
+
+> ... Maybe not.", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital!
+>... Sigh.
+
+> Huh? I...
+> Are you sure? I mean...
+> We were school friends, you know. Was there something I could have said, when we were more malleable? 
+> When they hadn't lost their mind?
+
+
+> ... Maybe not.
+
+
+
+
+
+
+> ... Hm? Staying over already?
+> Shouldn't you take me out first?", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital!
+>... Sigh.
+
+> Huh? I...
+> Are you sure? I mean...
+> We were school friends, you know. Was there something I could have said, when we were more malleable? 
+> When they hadn't lost their mind?
+
+
+> ... Maybe not.
+
+
+
+
+
+
+> ... Hm? Staying over already?
+> Shouldn't you take me out first?", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital!
+>... Sigh.
+
+> Huh? I...
+> Are you sure? I mean...
+> We were school friends, you know. Was there something I could have said, when we were more malleable? 
+> When they hadn't lost their mind?
+
+
+> ... Maybe not.
+
+
+
+
+
+
+> ... Hm? Staying over already?
+> Shouldn't you take me out first?
+
+
+> Teehee...
+", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital!
+>... Sigh.
+
+> Huh? I...
+> Are you sure? I mean...
+> We were school friends, you know. Was there something I could have said, when we were more malleable? 
+> When they hadn't lost their mind?
+
+
+> ... Maybe not.
+
+
+
+
+
+
+> ... Hm? Staying over already?
+> Shouldn't you take me out first?
+
+
+> Teehee...
+", "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital!
+>... Sigh.
+
+> Huh? I...
+> Are you sure? I mean...
+> We were school friends, you know. Was there something I could have said, when we were more malleable? 
+> When they hadn't lost their mind?
+
+
+> ... Maybe not.
+
+
+
+
+
+
+> ... Hm? Staying over already?
+> Shouldn't you take me out first?
+
+
+> Teehee...
+[b]The End.
+'Enter' to return to first level."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/RichTextLabel2:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 6, 8.066667, 8.966666, 17, 19, 20, 25, 27, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": ["
+
+", "
+
+... Yes. Not my first kidnapping stunt, believe it or not. <
+Where did Lim go? <
+
+
+
+", "
+
+... Yes. Not my first kidnapping stunt, believe it or not. <
+Where did Lim go? <
+
+
+
+", "
+
+... Yes. Not my first kidnapping stunt, believe it or not. <
+Where did Lim go? <
+
+
+
+It's not your fault. <
+", "
+
+... Yes. Not my first kidnapping stunt, believe it or not. <
+Where did Lim go? <
+
+
+
+It's not your fault. <
+", "
+
+... Yes. Not my first kidnapping stunt, believe it or not. <
+Where did Lim go? <
+
+
+
+It's not your fault. <
+
+
+
+
+
+
+
+Even if there was, there isn't anything you can do now. <", "
+
+... Yes. Not my first kidnapping stunt, believe it or not. <
+Where did Lim go? <
+
+
+
+It's not your fault. <
+
+
+
+
+
+
+
+Even if there was, there isn't anything you can do now. <", "
+
+... Yes. Not my first kidnapping stunt, believe it or not. <
+Where did Lim go? <
+
+
+
+It's not your fault. <
+
+
+
+
+
+
+
+Even if there was, there isn't anything you can do now. <
+
+You should get some rest, Miss Deri. The sun might rise before we even sleep. <
+There should be a hotel around here, unless, uhm... your house is close. <", "
+
+... Yes. Not my first kidnapping stunt, believe it or not. <
+Where did Lim go? <
+
+
+
+It's not your fault. <
+
+
+
+
+
+
+
+Even if there was, there isn't anything you can do now. <
+
+You should get some rest, Miss Deri. The sun might rise before we even sleep. <
+There should be a hotel around here, unless, uhm... your house is close. <", "
+
+... Yes. Not my first kidnapping stunt, believe it or not. <
+Where did Lim go? <
+
+
+
+It's not your fault. <
+
+
+
+
+
+
+
+Even if there was, there isn't anything you can do now. <
+
+You should get some rest, Miss Deri. The sun might rise before we even sleep. <
+There should be a hotel around here, unless, uhm... your house is close. <
+
+
+Ugh, I knew you'd say that. Yes or no?! It's nothing special!"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(11.033334, 31),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1000)]
+}
+
+[sub_resource type="Animation" id="Animation_sy8ce"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital! Hehe!
+> Sigh...
+
+> Huh? I...
+> ... Are you sure? 
+> We were school friends, you know. Was there something I could have said, when we were more malleable?
+
+
+> ... Maybe not.
+
+
+
+
+
+> Oh? Staying over already? Shouldn't you take me out first?
+
+
+> Teehee..."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/RichTextLabel2:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["
+
+... Yes. Not my first kidnapping stunt, believe it or not. <
+Where did Lim go? <
+
+
+
+It's not your fault. <
+> Huh? I...
+> ... Are you sure? 
+
+
+
+
+Even if there was, there isn't anything you can do now. <
+
+You ought to get some rest. The sun might rise before we sleep. <
+There should be a hotel around here, unless... uhm, your house is close. <
+
+
+HEY! Don't get it twisted! I just need a nap too, lady. <"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uvbhr"]
+_data = {
+&"RESET": SubResource("Animation_sy8ce"),
+&"new_animation": SubResource("Animation_k7rdy")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_sy8ce")
+level = "uid://c17t35cyh7ht8"
+music = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
+offset_left = -48.0
+offset_right = 1392.0
+offset_bottom = 768.0
+color = Color(1, 1, 1, 0)
+
+[node name="background" type="Sprite2D" parent="."]
+modulate = Color(0.7536314, 0.66993135, 0.70303714, 1)
+z_index = -1
+texture_filter = 1
+position = Vector2(634.3335, 358.00003)
+scale = Vector2(2.2716043, 2.271605)
+texture = ExtResource("1_dmh3q")
+
+[node name="backGROUND" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(645.1206, 426.35416)
+scale = Vector2(0.6759832, 0.5673225)
+texture = ExtResource("2_iggq8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(280.00003, 422)
+scale = Vector2(6.21875, 6.21875)
+sprite_frames = SubResource("SpriteFrames_dmh3q")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(988, 422)
+scale = Vector2(-6.219, 6.219)
+sprite_frames = SubResource("SpriteFrames_dmh3q")
+animation = &"new_animation"
+autoplay = "new_animation"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uvbhr")
+}
+autoplay = "new_animation"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 372.0
+offset_right = 868.0
+offset_bottom = 1880.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+theme = ExtResource("5_uvbhr")
+bbcode_enabled = true
+text = "> Haah... Did I... do it?
+> Ral? Are you there?
+
+
+
+> Knocked out and sent to L' Ho(s)pital! Hehe!
+> Sigh...
+
+> Huh? I...
+> ... Are you sure? 
+> We were school friends, you know. Was there something I could have said, when we were more malleable?
+
+
+> ... Maybe not.
+
+
+
+
+
+> Oh? Staying over already? Shouldn't you take me out first?
+
+
+> Teehee..."
+scroll_active = false
+scroll_following_visible_characters = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 372.0
+offset_right = 868.0
+offset_bottom = 1400.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+theme = ExtResource("5_uvbhr")
+text = "
+
+... Yes. Not my first kidnapping stunt, believe it or not. <
+Where did Lim go? <
+
+
+
+It's not your fault. <
+> Huh? I...
+> ... Are you sure? 
+
+
+
+
+Even if there was, there isn't anything you can do now. <
+
+You ought to get some rest. The sun might rise before we sleep. <
+There should be a hotel around here, unless... uhm, your house is close. <
+
+
+HEY! Don't get it twisted! I just need a nap too, lady. <"
+scroll_active = false
+scroll_following_visible_characters = true
+horizontal_alignment = 2

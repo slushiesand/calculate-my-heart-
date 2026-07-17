@@ -200,7 +200,7 @@ animations = [{
 
 [node name="Node" type="Node"]
 script = ExtResource("1_iuf35")
-level = "uid://b5uspgfbbr3lk"
+level = "uid://dsn2la1beyj23"
 max_onward = 14
 music = 2
 
@@ -281,6 +281,126 @@ autoplay = "l_talk"
 script = ExtResource("7_ekxqj")
 onward_value = 4
 
+[node name="char5" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(219, 323.78632)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"l_talk"
+autoplay = "d_talk"
+script = ExtResource("7_ekxqj")
+onward_value = 5
+
+[node name="char6" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(1074, 324.00003)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_ekxqj")
+animation = &"l_talk"
+autoplay = "l_talk"
+script = ExtResource("7_ekxqj")
+onward_value = 6
+
+[node name="char7" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(219, 323.78632)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"d_talk"
+autoplay = "d_talk"
+script = ExtResource("7_ekxqj")
+onward_value = 7
+
+[node name="char8" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(1074, 324.00003)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_ekxqj")
+animation = &"r_talk"
+autoplay = "r_talk"
+script = ExtResource("7_ekxqj")
+onward_value = 8
+
+[node name="char9" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(1074, 324.00003)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_ekxqj")
+animation = &"l_talk"
+autoplay = "l_talk"
+script = ExtResource("7_ekxqj")
+onward_value = 9
+
+[node name="char10" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(1074, 324.00003)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_ekxqj")
+animation = &"l_talk"
+autoplay = "l_talk"
+script = ExtResource("7_ekxqj")
+onward_value = 10
+
+[node name="char11" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(219, 323.78632)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"d_talk"
+autoplay = "d_talk"
+script = ExtResource("7_ekxqj")
+onward_value = 11
+
+[node name="char12" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(1074, 324.00003)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_ekxqj")
+animation = &"l_talk"
+autoplay = "l_talk"
+script = ExtResource("7_ekxqj")
+onward_value = 12
+
+[node name="char13" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(219, 323.78632)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_53jq0")
+animation = &"l_talk"
+autoplay = "d_talk"
+script = ExtResource("7_ekxqj")
+onward_value = 13
+
+[node name="char14" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+texture_filter = 1
+position = Vector2(1074, 324.00003)
+scale = Vector2(0.533707, 0.533707)
+sprite_frames = SubResource("SpriteFrames_ekxqj")
+animation = &"l_talk"
+autoplay = "l_talk"
+script = ExtResource("7_ekxqj")
+onward_value = 14
+
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
 offset_left = -1.0
@@ -290,7 +410,6 @@ offset_bottom = 721.0
 color = Color(0.7254902, 0.7254902, 0.7254902, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
 texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -341,7 +460,7 @@ grow_horizontal = 2
 theme = SubResource("Theme_s2ta7")
 bbcode_enabled = true
 text = "... No wait, my friend!
-Don't leave."
+Don't go."
 scroll_active = false
 horizontal_alignment = 1
 script = ExtResource("7_ekxqj")
@@ -537,8 +656,8 @@ offset_bottom = 675.0
 grow_horizontal = 2
 theme = SubResource("Theme_s2ta7")
 bbcode_enabled = true
-text = "You are straying from the graph again... !
-If you join us, you can be as infinitely high or flat! No expectations, just as you liked! But you're acting like a mere dot on the plane."
+text = "There is no hope with lowly methods! This is the change we once fought for!
+If you join us, you can be infinitely high or flat! No expectations, just as you liked! But you're acting like a mere dot on the plane."
 scroll_active = false
 horizontal_alignment = 1
 script = ExtResource("7_ekxqj")
@@ -589,7 +708,29 @@ onward_value = 14
 [connection signal="onward" from="." to="char1" method="_on_text_onward"]
 [connection signal="onward" from="." to="char2" method="_on_text_onward"]
 [connection signal="onward" from="." to="char3" method="_on_text_onward"]
+[connection signal="onward" from="." to="char4" method="_on_text_onward"]
+[connection signal="onward" from="." to="char5" method="_on_text_onward"]
+[connection signal="onward" from="." to="char6" method="_on_text_onward"]
+[connection signal="onward" from="." to="char7" method="_on_text_onward"]
+[connection signal="onward" from="." to="char8" method="_on_text_onward"]
+[connection signal="onward" from="." to="char9" method="_on_text_onward"]
+[connection signal="onward" from="." to="char10" method="_on_text_onward"]
+[connection signal="onward" from="." to="char11" method="_on_text_onward"]
+[connection signal="onward" from="." to="char12" method="_on_text_onward"]
+[connection signal="onward" from="." to="char13" method="_on_text_onward"]
+[connection signal="onward" from="." to="char14" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel3" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel4" method="_on_text_onward"]
 [connection signal="onward" from="." to="RichTextLabel5" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel6" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel7" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel8" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel9" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel10" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel11" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel12" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel13" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel14" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel15" method="_on_text_onward"]
+[connection signal="onward" from="." to="RichTextLabel16" method="_on_text_onward"]

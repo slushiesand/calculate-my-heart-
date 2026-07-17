@@ -35,12 +35,16 @@ func _on_area_2d_body_exited(_body: Node2D) -> void:
 	
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	if new_text == answer:
-		$correctSFX.play()
 		$Control.hide()
-		if derivative:
-			$AnimationPlayer.play("derivative")
+		if onward_value == 5:
+			$defeatSFX.play()
+			$AnimationPlayer.play("white")
 		else:
-			$AnimationPlayer.play("integral")
+			$correctSFX.play()
+			if derivative:
+				$AnimationPlayer.play("derivative")
+			else:
+				$AnimationPlayer.play("integral")
 		
 		answered.emit()
 		onward_increase += 1
