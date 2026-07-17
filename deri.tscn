@@ -1,9 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cqjncaeeix62c"]
 
 [ext_resource type="Script" uid="uid://bs25362usa3r1" path="res://deri.gd" id="1_p7ils"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_txpwr"]
-load_path = "res://.godot/imported/deri.png-9e3883e5a89c6433697b7b42a1098828.ctex"
+[ext_resource type="Texture2D" uid="uid://bdedjmi78viw" path="res://art/deri.png" id="2_hnvv3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j2q8x"]
 radius = 72.45279
@@ -172,7 +170,7 @@ script = ExtResource("1_p7ils")
 texture_filter = 1
 position = Vector2(-0.71876144, 0.56295776)
 scale = Vector2(2.3925774, 2.5175924)
-texture = SubResource("CompressedTexture2D_txpwr")
+texture = ExtResource("2_hnvv3")
 hframes = 3
 vframes = 2
 frame = 3
